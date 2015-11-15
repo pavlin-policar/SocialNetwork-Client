@@ -4,7 +4,6 @@
   "description": "",
   "scripts": {
     "start": "node server",
-    "lint": "./node_modules/.bin/eslint src",
     "postinstall": "node deploy"
   },
   "repository": {
@@ -35,6 +34,7 @@
     "babel-runtime": "^6.1.18",
     "express": "^4.13.3",
     "flux": "^2.1.1",
+    "history": "^1.13.1",
     "http-proxy": "^1.12.0",
     "keymirror": "^0.1.1",
     "react": "^0.14.0",
