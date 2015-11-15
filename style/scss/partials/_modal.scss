@@ -1,0 +1,69 @@
+.wrapper-modal {
+  $transition-duration: .25s;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: $overlay-color;
+  z-index: 900;
+
+  // for longer content, we have to be able to scroll
+  overflow-y: auto;
+
+  // center the modal on the screen
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  // remove modal from effective dom
+  opacity: 0;
+  visibility: hidden;
+  //pointer-events: none;
+
+  // transition for opacity
+  transition: $transition-duration opacity;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    //pointer-events: all;
+  }
+
+  .modal {
+    // required for horizontal space around modal
+    max-width: 95vw;
+    // required for vertical space around modal
+    margin: $space-factor / 2 0;
+    align-self: flex-start;
+
+    background-color: #fff;
+    border: .1rem solid $general-border-color;
+
+    @include media-tablet {
+      max-width: 70vw;
+    }
+    @include media-desktop {
+      max-width: 700px;
+    }
+    @include media-large {
+      max-width: 1000px;
+    }
+
+    h1 {
+      margin-top: 0;
+      border-bottom: .2rem solid $general-border-color;
+    }
+
+    .modal-body { 
+      padding-bottom: $space-factor;
+
+      span {
+        display: inline-block;
+        margin-bottom: $space-factor / 4;
+      }
+      p { text-indent: 0; }
+    }
+  }
+}

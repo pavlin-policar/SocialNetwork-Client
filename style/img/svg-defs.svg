@@ -1,0 +1,10 @@
+<svg>
+  <defs>
+    <symbol id="arrow_down_left" viewBox="214.7 0 182.6 792">
+      <path fill="#444444" d="M23 32l-8-8 17-17-7-7-17 17-8-8v23h23z"></path>
+    </symbol>
+    <symbol id="arrow_down_right" viewBox="214.7 0 182.6 792">
+      <path fill="#444444" d="M32 9l-8 8-17-17-7 7 17 17-8 8h23v-23z"></path>
+    </symbol>
+  </defs>
+</svg>

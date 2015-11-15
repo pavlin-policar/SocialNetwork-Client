@@ -1,0 +1,95 @@
+.info {
+  $info-color: #666;
+  font-size: 80%;
+  color: $info-color;
+
+  a { color: $info-color; }
+}
+
+// CREATE NEW POST SECTION
+.create-post {
+  .options {
+    select {
+      // Privacy select box should be on the right
+      margin-left: auto;
+    }
+  }
+}
+
+// WALL POSTS SECTION
+// GENERAL SETTINGS
+article.post {
+  border-bottom: .1rem solid #ccc;
+  padding-bottom: $space-factor;
+
+  &:last-of-type {
+    border: none;
+    padding-bottom: 0;
+  }
+}
+
+.post-title, .post-body, .post-comments, .post-social {
+  // reset global padding to section
+  padding: 0;
+}
+
+.post-title, .post-body {
+  margin-bottom: $space-factor;
+}
+
+// POST HEADER
+// Image, author, extra data
+.post-title {
+
+  div {
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+  }
+
+  .author {
+    vertical-align: top;
+    display: block;
+  }
+}
+
+// POST COMMENT SECTION
+$comment-padding: $space-factor / 2;
+$comment-bg-color: #f4f4f4;
+
+.post-comments {
+  // eliminate space between comments and add comment form
+  margin-bottom: 0;
+
+  .post-comment {
+    display: flex;
+    padding: $comment-padding;
+    background-color: $comment-bg-color;
+
+    // bottom border on all comments except the last one
+    border-bottom: .1rem solid darken($comment-bg-color, 10%);
+
+    // align everything to the top
+    > * { align-self: flex-start; }
+
+    // if an image is present, it should have a margin to the right
+    img { margin-right: .25 * $space-factor; }
+  }
+}
+
+// ADD COMMENT SECTION
+.post-social {
+  // bottom margin is already added by article
+  margin-bottom: 0;
+  padding: $comment-padding;
+  background-color: $comment-bg-color;
+}
+
+// LOAD MORE BUTTON
+.load-more {
+  padding-top: $space-factor;
+  border-top: .1rem solid $general-border-color;
+  display: block;
+  text-align: center;
+  margin-bottom: $space-factor / 4;
+}

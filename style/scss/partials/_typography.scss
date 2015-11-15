@@ -1,0 +1,19 @@
+
+// TYPOGRAPHY
+
+h1 { font-size: 200%; }
+h2 { font-size: 180%; color: #333;  }
+h3 { font-size: 170%; color: #333; }
+h4 { font-size: 150%; }
+h5 { font-size: 130%; color: #333; }
+h6 { font-size: 110%; color: #333; }
+p { text-indent: 1rem; }
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

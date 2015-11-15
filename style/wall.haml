@@ -1,0 +1,145 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width", "initial-scale" => 1, "maximum-scale" => 1}
+    %title FRI SP Social network
+    %link{:type => "text/css", :href => "build/app.css", :rel => "stylesheet"}
+
+  %body
+    %div.wrapper
+
+      %div.wrapper-modal
+        %section.modal
+          %h1 Make a decision
+          %div.modal-body
+            %p Your friend is about to do something stupid.
+            %p He wants to prove that he isn't scared of the police, so he has decided to take a leak at some statue in the middle of the city. The police haven't caught on yet, but you see some patrol men strolling by.
+            %p You can encourage him; this will surely make a great story to tell your friends and future children. Or you could be totally lame and stop him. An arrest probably wouldn't look good for his career.
+            %p A tough choice is upon you, and you are the sole person sober enough to make a rational decision at the present moment.
+            %p What do you do?
+          %div.center-button-group
+            %button.button Encourage him
+            %button.button.boring Stop him
+
+      %nav.wrapper-menu
+        %ul
+          %li#menu-return-trigger
+            %a{:href => ""} Back
+          %li.separate
+            %form{:action => ""}
+              %input{:type => "search", :placeholder => "Search"}
+          %li.separate
+            %a{:href => ""} Home
+          %li
+            %a{:href => ""} Notifications
+          %li
+            %a{:href => ""} Messages
+          %li
+            %a{:href => ""} Friend Requests
+          %li
+            %a{:href => ""} Profile
+          %li
+            %a{:href => ""} Settings
+          %li.separate
+            %a{:href => ""} Log out
+        %section.page-footer
+          %a{:href => ""} About
+          %a{:href => ""} Help
+          %a{:href => ""} Privacy
+          %a{:href => ""} Terms
+          %a{:href => ""} Cookies
+          %a{:href => ""} Report a bug
+          %span.copyright
+            &copy;2015
+            %a{:href => ""} NotMadeUp co.
+
+      %div.wrapper-content
+        %header.banner{:role => "banner"}
+          %a#logo{:href => ""}
+            %h1 SP Social
+          %button Menu
+
+        %main
+          %div.wrapper-sidebar-left
+            %section.container#quick-profile
+              %img{:src => "http://placehold.it/56x56", :alt => ""}
+            %section.container#trending
+              %h4 Trending today
+              %ul
+                %li
+                  %a{:href => ""}> #dolanplz
+                %li
+                  %a{:href => ""}> #donaldtrumpforprez
+                %li
+                  %a{:href => ""}> #stoptheimmigrants
+                %li
+                  %a{:href => ""}> #juliet
+                %li
+                  %a{:href => ""}> #fallout4
+
+          %div.wrapper-sidebar-right
+            %section.container#information
+              %h5 Here are some things happening today
+              %span
+                %a{:href => ""} Tweety Bird 
+                &nbsp;and&nbsp;
+                %a{:href => ""} Jessica Alba 
+                &nbsp;are celebrating their birthdays today.
+
+          %div.wrapper-feed
+            %section.container.create-post
+              %form.inline-form{:action => ""}
+                %img{:src => "http://placehold.it/56x56", :alt => ""}
+                %div.block-component
+                  %div.group
+                    %textarea{:rows => 1, :placeholder => "Share with the world"}
+                    %button{:type => "submit"} Share
+                  %div.group.options
+                    %a{:href => ""} Share a photo
+                    %select#privacy{:name => "privacy"}
+                      %option{:value => ""} Public
+                      %option{:value => ""} Friends only
+                      %option{:value => ""} Family only
+                      %option{:value => ""} Only me
+
+
+            %section.container#news
+              - news = [{ :author => "Daffy Duck", :post => "Hehe, hunter can't catch me! But that doesn't stop him from trying ^^", :timestamp => "15 minutes ago", :comments => [{ :author => "Hunter", :comment => "You just wait you silly duck!", :timestamp => "10 minutes ago"}, { :author => "Daffy Duck", :comment => "Aww, what's the matter, can't catch me? You'll get there.", :timestamp => "8 minutes ago"}] }, { :author => "Bugs Bunny", :post => "I'm gonna just stand here and munch on my carrot.", :timestamp => "About 1 hour ago", :comments => [] }, { :author => "Daffy Duck", :post => "Yeee buddy, you gotta catch me first. #comeandgetme", :timestamp => "9:36", :comments => [] }, { :author => "Hunter", :post => "I'm gonna catch me some wabbit. #dinner", :timestamp => "7:59", :comments => [] }, { :author => "Tweety Bird", :post => "Who else is awake? #yolo #sleepisfortheweak", :timestamp => "Yesterday at 4:20", :comments => [{ :author => "Adolf Hitler", :comment => "Here I am.", :timestamp => "Yesterday at 4:22" }] }, { :author => "Daffy Duck", :post => "Oh boy! Hunter's coming back to town.", :timestamp => "Yesterday at 21:45", :comments => [] }]
+              - news.each do |n|
+                %article.post
+                  %section.post-title
+                    %img{:src => "http://placehold.it/56x56", :alt => ""}
+                    %div
+                      %a.author{:href => ""} #{n[:author]}
+                      %span.info
+                        #{n[:timestamp]}
+                        %a{:href => ""} Location
+
+                  %section.post-body
+                    %span.post-content #{n[:post]}
+
+                  - if not n[:comments].empty?
+                    %section.post-comments
+                      - n[:comments].each do |c|
+                        %div.post-comment
+                          %img{:src => "http://placehold.it/40x40", :alt => ""}
+                          %div.block-component
+                            %div.group
+                              %a.author{:href => ""} #{c[:author]}
+                              %span #{c[:comment]}
+                            %div.group
+                              %span.info #{c[:timestamp]}
+
+                  %section.post-social
+                    %form.inline-form{:action => ""}
+                      %img{:src => "http://placehold.it/40x40", :alt => ""}
+                      %textarea{:rows => 1, :placeholder => "Leave a comment"}
+                      %button{:type => "submit"} Post
+
+              %div.load-more
+                %a{:href => ""} Load more
+
+      %div.general-overlay
+
+    %script{ :src => "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"}
