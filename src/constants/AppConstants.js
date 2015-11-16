@@ -13,8 +13,8 @@ export default {
 
     SHOW_MENU: null,
     HIDE_MENU: null,
-    TOGGLE_MENU: null,
     SHOW_MODAL: null,
+    HIDE_MODAL: null,
 
     CREATE_NEW_POST: null,
     CREATE_NEW_COMMENT: null

@@ -15,7 +15,7 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-        <section className="container create-post">
+        <section className="create-post">
           <InlineForm action="">
             <img alt="" src="http://placehold.it/56x56"/>
             <StackComponent>

@@ -1,12 +1,8 @@
 @import '../config';
 
 article.post {
-  border-bottom: .1rem solid #ccc;
+  border-top: .1rem solid $general-border-color;
   padding: $space-factor;
-
-  &:last-of-type {
-    border: none;
-  }
 }
 
 .post-title, .post-body {

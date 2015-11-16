@@ -14,10 +14,10 @@ class FeedComponent extends React.Component {
 
   render() {
     return (
-      <div className="wrapper-feed">
-        <CreatePost />
-        <PostsContainer />
-      </div>
+        <div className="wrapper-feed container">
+          <CreatePost />
+          <PostsContainer />
+        </div>
     );
   }
 

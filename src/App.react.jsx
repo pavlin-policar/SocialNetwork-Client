@@ -1,10 +1,10 @@
 import './App.scss';
 
 import React from 'react';
-import WrapperComponent from './components/WrapperComponent.react';
+import WrapperComponent from './components/structural/WrapperComponent.react';
 import WrapperModal from './components/modal/WrapperModal.react';
 import WrapperMenu from './components/menu/WrapperMenu.react';
-import GeneralOverlay from './components/GeneralOverlay.react';
+import GeneralOverlay from './components/overlay/GeneralOverlay.react';
 
 let modalMessage = (
     <div>

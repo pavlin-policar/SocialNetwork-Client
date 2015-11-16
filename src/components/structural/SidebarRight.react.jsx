@@ -1,7 +1,7 @@
 import './SidebarRight.scss';
 
 import React from 'react';
-import QuickInformation from './QuickInformation.react';
+import EventCard from '../cards/EventCard.react';
 
 class SidebarRight extends React.Component {
 
@@ -13,9 +13,9 @@ class SidebarRight extends React.Component {
 
   render() {
     return (
-      <div className="wrapper-sidebar-right">
-        <QuickInformation />
-      </div>
+        <div className="wrapper-sidebar-right">
+          <EventCard />
+        </div>
     );
   }
 

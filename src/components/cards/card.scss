@@ -1,0 +1,12 @@
+@import '../config';
+
+@mixin card-common {
+  & > * {
+    margin-bottom: $space-factor;
+    padding: $space-factor;
+  }
+
+  & > * {
+    margin-bottom: 0;
+  }
+}

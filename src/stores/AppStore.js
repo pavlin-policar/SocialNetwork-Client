@@ -8,7 +8,8 @@ const ActionTypes = AppConstants.ActionTypes;
 
 let _appState = Map({
   mainMenuVisible: false,
-  modalVisible: false
+  modalVisible: false,
+  overlayVisible: false
 });
 
 class AppStore extends EventEmitter {
@@ -22,6 +23,10 @@ class AppStore extends EventEmitter {
 
   getModalVisible() {
     return _appState.get('modalVisible');
+  }
+
+  getOverlayVisible() {
+    return _appState.get('overlayVisible');
   }
 
   emitChange() {
@@ -43,22 +48,23 @@ instance.dispatchToken = AppDispatcher.register(action => {
   switch (action.type) {
     case ActionTypes.SHOW_MENU:
       _appState = _appState.set('mainMenuVisible', true);
+      _appState = _appState.set('overlayVisible', true);
       instance.emitChange();
       break;
 
     case ActionTypes.HIDE_MENU:
       _appState = _appState.set('mainMenuVisible', false);
-      instance.emitChange();
-      break;
-
-    case ActionTypes.TOGGLE_MENU:
-      _appState =
-          _appState.set('mainMenuVisible', !_appState.get('mainMenuVisible'));
+      _appState = _appState.set('overlayVisible', false);
       instance.emitChange();
       break;
 
     case ActionTypes.SHOW_MODAL:
-      _appState = _appState.set('modalVisible', !_appState.get('modalVisible'));
+      _appState = _appState.set('modalVisible', true);
+      instance.emitChange();
+      break;
+
+    case ActionTypes.HIDE_MODAL:
+      _appState = _appState.set('modalVisible', false);
       instance.emitChange();
       break;
 

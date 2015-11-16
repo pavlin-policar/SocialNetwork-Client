@@ -1,8 +1,8 @@
 import './SidebarLeft.scss';
 
 import React from 'react';
-import QuickProfile from './QuickProfile.react';
-import Trending from './Trending.react';
+import ProfileCard from '../cards/ProfileCard.react';
+import TrendingCard from '../cards/TrendingCard.react';
 
 class SidebarLeft extends React.Component {
 
@@ -15,8 +15,8 @@ class SidebarLeft extends React.Component {
   render() {
     return (
       <div className="wrapper-sidebar-left">
-        <QuickProfile />
-        <Trending />
+        <ProfileCard />
+        <TrendingCard />
       </div>
     );
   }

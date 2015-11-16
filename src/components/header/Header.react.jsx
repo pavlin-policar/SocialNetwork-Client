@@ -2,7 +2,7 @@ import './Header.scss';
 
 import React from 'react';
 import { Link } from 'react-router';
-import * as AppActionCreators from '../actions/AppActionCreators';
+import * as AppActionCreators from '../../actions/AppActionCreators';
 
 class Header extends React.Component {
 

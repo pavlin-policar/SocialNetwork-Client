@@ -1,7 +1,7 @@
 import './WrapperComponent.scss';
 
 import React from 'react';
-import Header from './Header.react';
+import Header from '../header/Header.react';
 
 class WrapperComponent extends React.Component {
 

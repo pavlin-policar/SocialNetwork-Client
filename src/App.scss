@@ -1,6 +1,7 @@
 @import '../bower_components/normalize-css/normalize.css';
 @import 'components/config';
 @import 'components/typography';
+@import 'components/mixins';
 
 * {
   box-sizing: border-box;
@@ -29,7 +30,7 @@ body {
   background: repeating-linear-gradient(-45deg, $col1, $col1 25px, $col2 25px, $col2 50px) fixed;
 }
 
-h1, h2, h3, p, ol, ul, input, section, header {
+h1, h2, h3, p, ol, ul, input, header, main {
   margin-bottom: $space-factor;
 }
 
@@ -45,19 +46,24 @@ form {
   overflow-y: auto;
 }
 
-.general-overlay {
-  //pointer-events: none;
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $overlay-color;
-  z-index: 800;
-  opacity: 0;
+.container {
+  $border: .1rem solid $general-border-color;
+  background-color: #fff;
+  border-top: $border;
+  border-bottom: $border;
 
-  transition: opacity .25s;
+  @include media-le-tablet {
+    border: $border;
+    margin-left: $space-factor;
+    margin-right: $space-factor;
+  }
+}
+
+.more {
+  width: 100%;
+  text-align: center;
+  padding: $space-factor $space-factor 0;
+  border-top: .1rem solid $general-border-color;
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="search"], textarea {

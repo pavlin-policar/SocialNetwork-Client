@@ -2,7 +2,8 @@
 
 .inline-component {
   display: flex;
-  width: 100%;
+  flex-grow: 1;
+  align-self: stretch;
 
   > * {
     align-self: flex-start;

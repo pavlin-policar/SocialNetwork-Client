@@ -102,15 +102,14 @@ class PostsContainer extends React.Component {
 
   render() {
     let posts = postsData.map((post) => {
-      return <Post key={post.postId} post={post} />
+      return <Post key={post.postId} post={post}/>
     });
     return (
-      <section className="container" id="news">
-        {posts}
-        <div className="load-more">
-          <a href="">Load more</a>
-        </div>
-      </section>
+        <section id="news">
+          <a href="" className="new-posts">5 new posts</a>
+          {posts}
+          <a href="" className="load-more">Load more</a>
+        </section>
     );
   }
 

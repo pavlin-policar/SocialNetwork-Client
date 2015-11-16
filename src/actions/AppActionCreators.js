@@ -11,10 +11,6 @@ export function hideMenu() {
   AppDispatcher.dispatchViewAction(ActionTypes.HIDE_MENU);
 }
 
-export function toggleMenu() {
-  AppDispatcher.dispatchViewAction(ActionTypes.TOGGLE_MENU);
-}
-
 export function showModal() {
   AppDispatcher.dispatchViewAction(ActionTypes.SHOW_MODAL);
 }

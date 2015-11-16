@@ -3,8 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
 import App from './App.react';
-import WallComponent from './components/WallComponent.react';
-import ProfileComponent from './components/ProfileComponent.react';
+import WallComponent from './components/structural/WallComponent.react';
 import NotFoundComponent from './components/NotFoundComponent.react';
 
 export default (
@@ -13,7 +12,6 @@ export default (
 
         <IndexRoute component={WallComponent}/>
 
-        <Route path=":userSlug" component={ProfileComponent}/>
         <Route path="*" component={NotFoundComponent}/>
 
       </Route>

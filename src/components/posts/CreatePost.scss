@@ -4,6 +4,7 @@
 
 .create-post {
   padding: $space-factor;
+  background-color: $create-post-color;
 
   img {
     margin-right: $space-factor / 4;
@@ -21,7 +22,6 @@
     &:focus {
       height: auto;
       padding-bottom: 3rem;
-      background: darken(#fff, .5%);
     }
   }
 

@@ -1,0 +1,5 @@
+@import 'card';
+
+.trending-card {
+  @include card-common;
+}

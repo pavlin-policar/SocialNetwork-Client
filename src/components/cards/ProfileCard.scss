@@ -1,0 +1,37 @@
+@import '../config';
+
+.profile-card {
+  margin-bottom: $space-factor;
+}
+
+.profile-card-banner {
+  height: 64px;
+  background-color: $banner-bg-color;
+  width: 100%;
+}
+
+.profile-card-content {
+  padding: $space-factor $space-factor $space-factor;
+  font-size: 80%;
+  border-bottom: .1rem solid $general-border-color;
+
+  img {
+    margin-top: -48px;
+    margin-right: 1rem;
+    border: .2rem solid #fff;
+  }
+
+  h3, h4 {
+    margin: 0;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.profile-card-statistics {
+  color: #666;
+  padding: $space-factor;
+  font-size: 80%;
+}
