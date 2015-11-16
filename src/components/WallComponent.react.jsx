@@ -1,3 +1,5 @@
+import './WallComponent.scss';
+
 import React from 'react';
 import SidebarLeft from './SidebarLeft.react';
 import SidebarRight from './SidebarRight.react';

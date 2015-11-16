@@ -1,0 +1,22 @@
+@import '../config';
+@import '../mixins';
+
+.container {
+  $border: .25rem solid $general-border-color;
+  background-color: #fff;
+  border-top: $border;
+  border-bottom: $border;
+
+  @include media-le-tablet {
+    border: $border;
+    margin-left: $space-factor;
+    margin-right: $space-factor;
+  }
+}
+
+.load-more {
+  padding: $space-factor;
+  border-top: .1rem solid $general-border-color;
+  display: block;
+  text-align: center;
+}

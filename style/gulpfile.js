@@ -35,9 +35,10 @@ gulp.task('html', function() {
 
 gulp.task('webserver', function() {
   connect.server({
-    livereload: true
+    livereload: true,
+    port: 4000
   });
-})
+});
 
 gulp.task('watch', function() {
   gulp.watch('scss/**/*.scss', ['styles']);

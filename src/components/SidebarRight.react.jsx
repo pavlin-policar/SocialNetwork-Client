@@ -1,3 +1,5 @@
+import './SidebarRight.scss';
+
 import React from 'react';
 import QuickInformation from './QuickInformation.react';
 

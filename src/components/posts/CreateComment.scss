@@ -1,0 +1,26 @@
+@import '../config';
+@import 'posts-config';
+
+.post-social {
+  padding: $comment-padding;
+  // override global section margin-bottom
+  margin-bottom: 0;
+
+  background-color: $comment-bg-color;
+
+  img {
+    margin-right: $space-factor / 4;
+  }
+
+  textarea {
+    resize: none;
+    flex-grow: 1;
+    align-self: stretch;
+  }
+
+  button {
+    font-size: .75rem;
+    padding: $space-factor / 2 $space-factor;
+    align-self: stretch;
+  }
+}

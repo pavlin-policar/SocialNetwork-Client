@@ -1,0 +1,114 @@
+@import '../bower_components/normalize-css/normalize.css';
+@import 'components/config';
+@import 'components/typography';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+
+  font-size: $font-size;
+  line-height: $space-multiplier;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+
+  $col1: #fbfbfb;
+  $col2: #f6f6f6;
+  background: repeating-linear-gradient(-45deg, $col1, $col1 25px, $col2 25px, $col2 50px) fixed;
+}
+
+h1, h2, h3, p, ol, ul, input, section, header {
+  margin-bottom: $space-factor;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.general-overlay {
+  //pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $overlay-color;
+  z-index: 800;
+  opacity: 0;
+
+  transition: opacity .25s;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="search"], textarea {
+  display: block;
+  width: 100%;
+  padding: ($space-factor / 4) ($space-factor / 2);
+  outline: none;
+  box-sizing: border-box;
+}
+
+button, .button {
+  display: inline-block;
+  padding: $space-factor / 2 $space-factor;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  color: $button-color-label;
+  background-color: $button-color;
+
+  &:hover {
+    background-color: lighten($button-color, 5%);
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+// BUTTON STYLES
+// Boring button style, a kind of dull grey, for not so appealing options
+.boring {
+  background-color: $button-color-boring;
+  &:hover { background-color: lighten($button-color-boring, 10); }
+}
+// Dangerous buttons, you may want to be careful with these
+.danger {
+  background-color: $button-color-danger;
+  &:hover { background-color: lighten($button-color-danger, 10); }
+}
+
+// Create a button group with all buttons centered with flexbox positioning
+.center-button-group {
+  display: flex;
+  justify-content: center;
+
+  > * { margin: 0 .25rem; }
+}
+
+.block-button {
+  @extend .button;
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+@import 'mixins';
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  @include media-le-desktop {
+    flex-direction: row;
+  }
+}
+
+@include media-le-tablet {
+  main {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+@include media-le-desktop {
+  main {
+    width: 100%;
+  }
+}
+@include media-large {
+  main {
+    width: 1500px;
+  }
+}

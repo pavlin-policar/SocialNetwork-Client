@@ -1,0 +1,30 @@
+@import 'config';
+
+header.banner {
+  background-color: $banner-bg-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+
+  > * { padding: $space-factor / 2; }
+
+  a#logo {
+    color: #fff;
+    order: 2;
+    margin: 0;
+
+    &:hover { text-decoration: none; }
+  }
+
+  h1 { margin: 0; }
+
+  button {
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: $space-factor / 2 $space-factor * 2;
+
+    // make button stretch entire height of bar
+    align-self: stretch;
+  }
+}

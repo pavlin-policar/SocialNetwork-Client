@@ -1,3 +1,5 @@
+import './SidebarLeft.scss';
+
 import React from 'react';
 import QuickProfile from './QuickProfile.react';
 import Trending from './Trending.react';

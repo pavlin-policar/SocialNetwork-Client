@@ -1,3 +1,5 @@
+import './App.scss';
+
 import React from 'react';
 import WrapperComponent from './components/WrapperComponent.react';
 import WrapperModal from './components/modal/WrapperModal.react';

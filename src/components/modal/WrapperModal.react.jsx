@@ -1,3 +1,5 @@
+import './WrapperModal.scss';
+
 import React from 'react';
 
 class WrapperModal extends React.Component {

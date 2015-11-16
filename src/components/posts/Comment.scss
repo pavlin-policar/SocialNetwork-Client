@@ -1,0 +1,21 @@
+@import 'posts-config';
+
+.post-comment {
+  padding: $comment-padding;
+  background-color: $comment-bg-color;
+
+  // bottom border on all comments except the last one
+  border-bottom: .1rem solid darken($comment-bg-color, 10%);
+
+  img {
+    margin-right: $space-factor / 4;
+  }
+}
+
+.info {
+  $info-color: #666;
+  font-size: 80%;
+  color: $info-color;
+
+  a { color: $info-color; }
+}

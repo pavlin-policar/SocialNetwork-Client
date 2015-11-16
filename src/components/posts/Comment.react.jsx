@@ -1,5 +1,9 @@
+import './Comment.scss';
+
 import React from 'react';
 import { timestampString } from '../../utils/TimestampUtils';
+import InlineComponent from '../common/InlineComponent.react';
+import StackComponent from '../common/StackComponent.react';
 
 class Comment extends React.Component {
 
@@ -12,19 +16,18 @@ class Comment extends React.Component {
   render() {
     const comment = this.props.comment;
     return (
-      <div className="post-comment">
-        <img alt="" src={comment.thumbnail}/>
+        <InlineComponent className="post-comment">
+          <img alt="" src={comment.thumbnail}/>
 
-        <div>
-          <div className="group">
-            <a className="author" href="">{comment.author}</a>&nbsp;
-            <span>{comment.comment}</span>
-          </div>
-          <div className="group">
+          <StackComponent>
+            <div>
+              <a className="author" href="">{comment.author}</a>&nbsp;
+              <span>{comment.comment}</span>
+            </div>
+
             <span className="info">{timestampString(comment.timestamp)}</span>
-          </div>
-        </div>
-      </div>
+          </StackComponent>
+        </InlineComponent>
     );
   }
 

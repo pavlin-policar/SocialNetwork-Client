@@ -1,0 +1,43 @@
+@import '../config';
+@import 'posts-config';
+@import '../mixins';
+
+.create-post {
+  padding: $space-factor;
+
+  img {
+    margin-right: $space-factor / 4;
+  }
+
+  textarea {
+    resize: none;
+    align-self: stretch;
+    border: .1rem solid $general-border-color;
+    border-left: 0;
+    border-right: 0;
+
+    transition: all .25s;
+
+    &:focus {
+      height: auto;
+      padding-bottom: 3rem;
+      background: darken(#fff, .5%);
+    }
+  }
+
+  button {
+    align-self: stretch;
+  }
+}
+
+.create-post-form {
+  margin-bottom: $space-factor / 2;
+}
+
+.create-post-options {
+
+  select {
+    // Privacy select box should be on the right
+    margin-left: auto;
+  }
+}

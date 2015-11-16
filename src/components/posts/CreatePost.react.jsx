@@ -1,4 +1,9 @@
+import './CreatePost.scss';
+
 import React from 'react';
+import InlineForm from '../common/InlineForm.react';
+import InlineComponent from '../common/InlineComponent.react';
+import StackComponent from '../common/StackComponent.react';
 
 class CreatePost extends React.Component {
 
@@ -10,15 +15,14 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-      <section className="container create-post">
-        <form action="" className="inline-form">
-          <img alt="" src="http://placehold.it/56x56" />
-            <div className="block-component">
-              <div className="group">
-                <textarea placeholder="Share with the world" rows="1"></textarea>
-                <button type="submit">Share</button>
-              </div>
-              <div className="group options">
+        <section className="container create-post">
+          <InlineForm action="">
+            <img alt="" src="http://placehold.it/56x56"/>
+            <StackComponent>
+              <InlineComponent className="create-post-form">
+                <textarea placeholder="Share with the world"></textarea>
+              </InlineComponent>
+              <InlineComponent className="create-post-options">
                 <a href="">Share a photo</a>
                 <select id="privacy" name="privacy">
                   <option value="">Public</option>
@@ -26,9 +30,10 @@ class CreatePost extends React.Component {
                   <option value="">Family only</option>
                   <option value="">Only me</option>
                 </select>
-              </div>
-            </div>
-          </form>
+                <button type="submit">Share</button>
+              </InlineComponent>
+            </StackComponent>
+          </InlineForm>
         </section>
     );
   }

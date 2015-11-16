@@ -1,5 +1,6 @@
 var path = require('path');
-var Webpack = require('webpack');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
@@ -13,21 +14,26 @@ module.exports = {
     // files are kept in memory in webpack-dev-server, but an error will occur
     // if nothing is specified. We use the buildPath as that points to where
     // the files will eventually be bundled in production
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'assets'),
 
     filename: 'bundle.js',
 
     // Everything related to Webpack should go through a build path,
     // localhost:3000/build. That makes proxying easier to handle
-    publicPath: '/build/'
+    publicPath: '/assets/'
   },
   plugins: [
-    new Webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     loaders: [
       {
         loader: 'babel',
+
+        // There really is no need to transpile node modules, since they are
+        // already ES5
+        exclude: /node_modules/,
 
         // Only look inside these folders for files
         include: path.join(__dirname, 'src'),
@@ -40,6 +46,10 @@ module.exports = {
           plugins: ['transform-runtime'],
           presets: ['es2015', 'stage-0', 'react']
         }
+      },
+      {
+        test: /\.scss/,
+        loader: 'style!css!autoprefixer!sass'
       }
     ]
   },
@@ -47,8 +57,7 @@ module.exports = {
     extensions: [
       '',
       '.js',
-      '.jsx',
-      '.webpack.js'
+      '.jsx'
     ]
   }
 };

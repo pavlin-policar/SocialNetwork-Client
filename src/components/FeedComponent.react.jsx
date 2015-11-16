@@ -1,3 +1,5 @@
+import './FeedComponent.scss';
+
 import React from 'react';
 import CreatePost from './posts/CreatePost.react';
 import PostsContainer from './posts/PostsContainer.react';

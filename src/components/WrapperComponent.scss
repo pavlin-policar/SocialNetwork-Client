@@ -1,0 +1,8 @@
+.wrapper-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  // override for 100vw, must be in place, otherwise desktop version overflows in x
+  max-width: 100%;
+}

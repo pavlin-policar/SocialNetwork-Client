@@ -1,8 +1,9 @@
-var Webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'build');
+var buildPath = path.resolve(__dirname, 'assets');
 var mainPath = path.resolve(__dirname, 'src', 'index.js');
 
 module.exports = {
@@ -14,6 +15,10 @@ module.exports = {
     path: buildPath,
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new ExtractTextPlugin('bundle.css', { allChunks: false })
+  ],
   module: {
     loaders: [
       {
@@ -32,6 +37,13 @@ module.exports = {
           plugins: ['transform-runtime'],
           presets: ['es2015', 'stage-0', 'react']
         }
+      },
+      {
+        test: /\.scss/,
+        loader: ExtractTextPlugin.extract(
+            'style-loader',
+            'css-loader!autoprefixer-loader!sass-loader'
+        )
       }
     ]
   },
@@ -39,8 +51,7 @@ module.exports = {
     extensions: [
       '',
       '.js',
-      '.jsx',
-      '.webpack.js'
+      '.jsx'
     ]
   }
 };

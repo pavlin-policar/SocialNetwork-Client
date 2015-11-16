@@ -1,0 +1,113 @@
+@import '../config';
+@import '../mixins';
+
+.wrapper-menu {
+  $text-color: #999;
+  $menu-separator-color: lighten($menu-bg-color, 5%);
+
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  left: -100%;
+  background-color: $menu-bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 900;
+
+  font-weight: bold;
+
+  transition: left .5s;
+
+  // All text inside footer should have the same color
+  color: $text-color;
+
+  // this is here so all links inside footer have same base color
+  a { color: $text-color; }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+  }
+
+  li {
+    border-bottom: .1rem solid $menu-separator-color;
+
+    form { margin-bottom: 0; }
+
+    input[type="search"] {
+      margin-bottom: 0;
+      background-color: $menu-bg-color;
+      border: none;
+      padding: $space-factor;
+
+      color: #fff;
+
+      &:focus { background-color: lighten($menu-bg-color, 2.5%); }
+    }
+
+    a {
+      display: block;
+      padding: $space-factor;
+
+      &:hover { text-decoration: none; color: $link-color; }
+    }
+    &:hover { background-color: lighten($menu-bg-color, 2.5%); }
+    &.separate { border-top: .5rem solid $menu-separator-color; }
+  }
+
+  .page-footer {
+    font-size: .75rem;
+    padding: $space-factor $space-factor / 2;
+    margin: $space-factor 0 0;
+
+    > * { margin: 0 $space-factor / 4; }
+    > *:first-child { margin-left: 0; }
+    > *:last-child { margin-right: 0; }
+  }
+}
+
+.wrapper-menu  ~ .wrapper-content {
+  transition: left .5s;
+}
+
+.wrapper-menu.active {
+  left: 0;
+}
+
+.wrapper-menu.active ~ .wrapper-content {
+  left: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Every menu that doesn't classify as small doesn't take up the entire screen and displays the general overlay
+@include media-le-tablet {
+  .wrapper-menu {
+    border-right: .25rem solid darken($menu-bg-color, 2.5%);
+  }
+
+  .wrapper-menu.active ~ .general-overlay {
+    opacity: 1;
+    //pointer-events: all;
+    visibility: visible;
+  }
+}
+
+@include media-tablet {
+  $width: 40%;
+  .wrapper-menu { width: $width; left: -$width; }
+  .wrapper-menu.active ~ .wrapper-content { left: $width; }
+}
+@include media-desktop {
+  $width: 35%;
+  .wrapper-menu { width: $width; left: -$width; }
+  .wrapper-menu.active ~ .wrapper-content { left: $width; }
+}
+@include media-large {
+  $width: 25%;
+  .wrapper-menu { width: $width; left: -$width; }
+  .wrapper-menu.active ~ .wrapper-content { left: $width; }
+}

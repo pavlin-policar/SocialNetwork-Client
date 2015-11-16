@@ -1,0 +1,36 @@
+@import '../config';
+
+article.post {
+  border-bottom: .1rem solid #ccc;
+  padding: $space-factor;
+
+  &:last-of-type {
+    border: none;
+  }
+}
+
+.post-title, .post-body {
+  margin-bottom: $space-factor;
+}
+
+// POST HEADER
+// Image, author, extra data
+.post-title {
+
+  img {
+    margin-right: $space-factor / 4;
+  }
+}
+
+.post-body {
+}
+
+.info {
+  $info-color: #666;
+  font-size: 80%;
+  color: $info-color;
+
+  a {
+    color: $info-color;
+  }
+}

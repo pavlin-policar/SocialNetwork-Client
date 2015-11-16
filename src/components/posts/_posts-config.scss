@@ -1,0 +1,6 @@
+@import '../config';
+
+// Padding within each individual comment, also inside create new comment component
+$comment-padding: $space-factor / 2;
+// Comments background color
+$comment-bg-color: #f4f4f4;

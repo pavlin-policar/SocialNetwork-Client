@@ -1,0 +1,10 @@
+@import '../config';
+
+.inline-component {
+  display: flex;
+  width: 100%;
+
+  > * {
+    align-self: flex-start;
+  }
+}

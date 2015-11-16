@@ -1,4 +1,7 @@
+import './CreateComment.scss';
+
 import React from 'react';
+import InlineForm from '../common/InlineForm.react';
 
 class CreateComment extends React.Component {
 
@@ -11,11 +14,11 @@ class CreateComment extends React.Component {
   render() {
     return (
       <section className="post-social">
-        <form action="" className="inline-form">
+        <InlineForm action="">
           <img alt="" src="http://placehold.it/40x40"/>
           <textarea placeholder="Leave a comment" rows="1"></textarea>
           <button type="submit">Post</button>
-        </form>
+        </InlineForm>
       </section>
     );
   }
