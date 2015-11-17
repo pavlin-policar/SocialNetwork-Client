@@ -19,6 +19,13 @@ if (!isProduction) {
   var bundle = require('./server/bundle.js');
   bundle();
 
+  // Send a dummy css file when in development, so we don't get errors. In
+  // production, the css file will be generated, but in development the styling
+  // happens via the javascript bundle, resulting in a 404 for the css file
+  app.get('/assets/bundle.css', function(req, res) {
+    res.send('');
+  });
+
   // Any requests to localhost:3000/build is proxied
   // to webpack-dev-server
   app.all('/assets/*', function (req, res) {

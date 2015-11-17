@@ -15,9 +15,10 @@ class Header extends React.Component {
   render() {
     return (
         <header className="banner" role="banner">
-
-          <Link id="logo" to="/"><h1>SP Social</h1></Link>
           <button onClick={this._handleShowMenu}>Menu</button>
+          <button>Messages</button>
+          <button>Notifications</button>
+          <Link id="logo" to="/"><h1>SP Social</h1></Link>
         </header>
     );
   }

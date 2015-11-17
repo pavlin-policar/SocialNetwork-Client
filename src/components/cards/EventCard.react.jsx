@@ -17,14 +17,14 @@ class EventCard extends React.Component {
           <StackComponent className="event-card-today">
             <h5>Events today</h5>
             <StackComponent>
-              <span class="event-inline-global"><a href="">Paris terrorist attacks</a></span>
-              <span class="event-inline-birthday"><a href="">Bugs Bunny</a> is celebrating their birthday today.</span>
+              <span className="event-inline-global"><a href="">Paris terrorist attacks</a></span>
+              <span className="event-inline-birthday"><a href="">Bugs Bunny</a> is celebrating their birthday today.</span>
             </StackComponent>
           </StackComponent>
           <StackComponent className="event-card-upcoming">
             <h5>Upcoming events</h5>
             <StackComponent>
-              <span class="event-inline-social"><a href="">Metallica concert</a> tommorow at 21:00</span>
+              <span className="event-inline-social"><a href="">Metallica concert</a> tommorow at 21:00</span>
             </StackComponent>
           </StackComponent>
         </StackComponent>

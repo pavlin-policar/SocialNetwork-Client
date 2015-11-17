@@ -1,0 +1,19 @@
+@import '../config';
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  // remove any potential whitespace between elements to create uniform spacing
+  font-size: 0;
+
+  a {
+    display: inline-block;
+    margin: 0;
+  }
+
+  > * {
+    padding: 1%;
+    overflow: hidden;
+    font-size: $font-size;
+  }
+}

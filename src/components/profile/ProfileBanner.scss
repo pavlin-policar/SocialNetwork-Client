@@ -1,0 +1,22 @@
+@import '../config';
+@import '../mixins';
+
+.profile-banner {
+  background-color: $profile-bg-color;
+  margin-top: -$space-factor;
+  margin-bottom: $space-factor;
+
+  padding: $space-factor;
+  height: height + 2 * $space-factor;
+
+  img {
+    height: 196px;
+    width: 196px;
+
+    z-index: 200;
+  }
+
+  @include media-le-tablet {
+    height: 172px;
+  }
+}

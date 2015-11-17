@@ -1,18 +1,17 @@
 @import '../config';
+@import '../mixins';
 
 header.banner {
   background-color: $banner-bg-color;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
+  border-bottom: .1rem solid $general-border-color;
 
   > * { padding: $space-factor / 2; }
 
-  a#logo {
-    color: #fff;
-    order: 2;
-    margin: 0;
+  #logo {
+    color: #000;
+    margin: 0 0 0 auto;
+    display: none;
 
     &:hover { text-decoration: none; }
   }
@@ -22,9 +21,17 @@ header.banner {
   button {
     font-weight: bold;
     margin-bottom: 0;
-    padding: $space-factor / 2 $space-factor * 2;
+    padding: $space-factor $space-factor * 2;
+    color: #000;
+    background-color: transparent;
 
     // make button stretch entire height of bar
     align-self: stretch;
+  }
+
+  @include media-le-tablet {
+    #logo {
+      display: inline-block;
+    }
   }
 }

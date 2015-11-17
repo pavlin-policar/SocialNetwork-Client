@@ -1,6 +1,8 @@
 @import '../config';
 
 @mixin card-common {
+  margin-bottom: $space-factor;
+
   & > * {
     margin-bottom: $space-factor;
     padding: $space-factor;

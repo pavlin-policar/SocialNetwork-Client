@@ -97,12 +97,17 @@ button, .button {
 // Boring button style, a kind of dull grey, for not so appealing options
 .boring {
   background-color: $button-color-boring;
-  &:hover { background-color: lighten($button-color-boring, 10); }
+  &:hover {
+    background-color: lighten($button-color-boring, 10);
+  }
 }
+
 // Dangerous buttons, you may want to be careful with these
 .danger {
   background-color: $button-color-danger;
-  &:hover { background-color: lighten($button-color-danger, 10); }
+  &:hover {
+    background-color: lighten($button-color-danger, 10);
+  }
 }
 
 // Create a button group with all buttons centered with flexbox positioning
@@ -110,11 +115,63 @@ button, .button {
   display: flex;
   justify-content: center;
 
-  > * { margin: 0 .25rem; }
+  > * {
+    margin: 0 .25rem;
+  }
 }
 
 .block-button {
   @extend .button;
   display: block;
   width: 100%;
+}
+
+// STRUCTURAL
+.max-width-container {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  > *[class^="col-"] {
+    align-self: flex-start;
+  }
+
+  @include media-le-tablet {
+    width: 700px;
+  }
+  @include media-le-desktop {
+    width: 100%;
+  }
+  @include media-large {
+    width: 1500px;
+  }
+}
+
+.col-25, .col-33, col-50, .col-66, col-75 {
+  width: 100%;
+}
+
+@include media-le-desktop {
+  .col-25 {
+    width: 25%;
+  }
+  .col-33 {
+    width: 100% / 3;
+  }
+  .col-50 {
+    width: 50%;
+  }
+  .col-66 {
+    width: 100% * 2 / 2;
+  }
+  .col-75 {
+    width: 75%;
+  }
+  .col-100 {
+    width: 100%;
+  }
+}
+
+.margin-bottom {
+  margin-bottom: $space-factor;
 }
