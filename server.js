@@ -26,23 +26,22 @@ if (!isProduction) {
     res.send('');
   });
 
-  // Serve all images properly
+// Serve all images properly
   app.all('/assets/images/*');
-
-  // Any requests to localhost:3000/build is proxied to webpack-dev-server
-  app.all('/assets/*', function (req, res) {
-    proxy.web(req, res, {
-      target: 'http://localhost:8080'
-    });
-  });
-
-  // Redirect all trafic to index.html since react router handles all routing
-  // anyways.
-  app.all('/*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, 'index.html'));
-  });
-
 }
+
+// Any requests to localhost:3000/build is proxied to webpack-dev-server
+app.all('/assets/*', function (req, res) {
+  proxy.web(req, res, {
+    target: 'http://localhost:8080'
+  });
+});
+
+// Redirect all trafic to index.html since react router handles all routing
+// anyways.
+app.all('/*', function (req, res) {
+  res.sendFile(path.resolve(__dirname, 'index.html'));
+});
 
 // It is important to catch any errors from the proxy or the server will crash.
 // An example of this is connecting to the server when webpack is bundling
