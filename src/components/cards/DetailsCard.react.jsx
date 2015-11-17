@@ -17,6 +17,12 @@ class DetailsCard extends React.Component {
     return (
         <StackComponent className="details-card container">
           <Link to={detailsLink} className="block-link ">
+            <div className="bordered">
+              <svg className="icon">
+                <use xlinkHref="#shape-user"/>
+              </svg>
+              <h5>Details</h5>
+            </div>
             <StackComponent>
               <span className="details-inline-birthday">Born on 12.3.1994</span>
               <span className="details-inline-education">Studied at FRI UL</span>

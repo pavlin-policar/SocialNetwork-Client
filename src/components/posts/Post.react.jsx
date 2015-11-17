@@ -25,8 +25,7 @@ class Post extends React.Component {
             <StackComponent>
               <a href="">{post.author}</a>
               <span className="info">
-                {timestampString(post.timestamp)}&nbsp;<a
-                  href="">{post.location}</a>
+                {timestampString(post.timestamp)} in <a href="">{post.location}</a>
               </span>
             </StackComponent>
           </InlineComponent>

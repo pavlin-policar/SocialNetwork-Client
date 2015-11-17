@@ -18,7 +18,12 @@ class PictureGalleryCard extends React.Component {
     return (
         <StackComponent className="picture-gallery-card container">
           <Link to={galleryLink} className="block-link">
-            <h5>Gallery</h5>
+            <div className="bordered">
+              <svg className="icon">
+                <use xlinkHref="#shape-images"/>
+              </svg>
+              <h5>Gallery</h5>
+            </div>
             <Grid>
               <img className="col-25" alt="" src="http://placehold.it/128x128" height="100%" width="100%"/>
               <img className="col-25" alt="" src="http://placehold.it/128x128" height="100%" width="100%"/>

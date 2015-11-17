@@ -1,0 +1,23 @@
+@import 'config';
+
+// fallback for svg support
+.no-svg {
+  .icon-container {
+    font-size: $font-size;
+    svg {
+      display: none;
+    }
+  }
+}
+
+.icon-container {
+  font-size: 0;
+}
+
+svg {
+  transition: transform .5s;
+}
+
+.shape-rotate-45 {
+  transform: rotate(45deg);
+}

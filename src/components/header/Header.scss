@@ -6,6 +6,13 @@ header.banner {
   display: flex;
   border-bottom: .1rem solid $general-border-color;
 
+  .icon {
+    height: $font-size * 1.5;
+    width: $font-size * 1.5;
+
+    fill: #333;
+  }
+
   > * {
     font-weight: bold;
     margin-bottom: 0;

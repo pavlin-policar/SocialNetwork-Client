@@ -15,16 +15,28 @@ class EventCard extends React.Component {
     return (
         <StackComponent className="container event-card">
           <StackComponent className="event-card-today">
-            <h5>Events today</h5>
+            <div>
+              <svg className="icon">
+                <use xlinkHref="#shape-sun"/>
+              </svg>
+              <h5>Events today</h5>
+            </div>
             <StackComponent>
-              <span className="event-inline-global"><a href="">Paris terrorist attacks</a></span>
+              <span className="event-inline-global"><a href="">Paris terrorist
+                attacks</a></span>
               <span className="event-inline-birthday"><a href="">Bugs Bunny</a> is celebrating their birthday today.</span>
             </StackComponent>
           </StackComponent>
           <StackComponent className="event-card-upcoming">
-            <h5>Upcoming events</h5>
+            <div>
+              <svg className="icon">
+                <use xlinkHref="#shape-calendar"/>
+              </svg>
+              <h5>Upcoming events</h5>
+            </div>
             <StackComponent>
-              <span className="event-inline-social"><a href="">Metallica concert</a> tommorow at 21:00</span>
+              <span className="event-inline-social"><a href="">Metallica
+                concert</a> tommorow at 21:00</span>
             </StackComponent>
           </StackComponent>
         </StackComponent>

@@ -15,4 +15,23 @@
   & > * {
     margin-bottom: 0;
   }
+
+  h5 {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .bordered {
+    border-bottom: .1rem solid $general-border-color;
+  }
+
+  .icon {
+    width: $font-size * 1.5;
+    height: $font-size * 1.5;
+    fill: #333;
+    margin-right: $font-size / 2;
+    margin-bottom: -$space-factor / 4;
+    vertical-align: baseline;
+  }
 }

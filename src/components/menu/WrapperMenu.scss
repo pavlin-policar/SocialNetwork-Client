@@ -28,7 +28,9 @@
   color: $text-color;
 
   // this is here so all links inside footer have same base color
-  a { color: $text-color; }
+  a {
+    color: $text-color;
+  }
 
   ul {
     padding: 0;
@@ -40,27 +42,65 @@
   li {
     border-bottom: .1rem solid $menu-separator-color;
 
-    form { margin-bottom: 0; }
+    form {
+      position: relative;
 
-    input[type="search"] {
-      margin-bottom: 0;
-      background-color: $menu-bg-color;
-      border: none;
-      padding: $space-factor;
+      .icon {
+        position: absolute;
+        height: 100%;
+        left: $font-size;
+      }
 
-      color: #fff;
+      input[type="search"] {
+        margin-bottom: 0;
+        background-color: $menu-bg-color;
+        border: none;
+        padding: $space-factor $font-size $space-factor $font-size * 3.3;
 
-      &:focus { background-color: lighten($menu-bg-color, 2.5%); }
+        color: #fff;
+
+        &:focus {
+          background-color: lighten($menu-bg-color, 2.5%);
+        }
+      }
+    }
+
+    .icon {
+      height: 1.4 * $font-size;
+      width: 1.4 * $font-size;
+      fill: $text-color;
+      margin-right: $font-size * 1;
+      margin-bottom: -$font-size / 4;
     }
 
     a {
       display: block;
-      padding: $space-factor;
+      padding: 0 $font-size;
 
-      &:hover { text-decoration: none; color: $link-color; }
+      span {
+        display: inline-block;
+        padding: $space-factor 0;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $link-color;
+
+        .icon {
+          fill: $link-color;
+        }
+      }
     }
-    &:hover { background-color: lighten($menu-bg-color, 2.5%); }
-    &.separate { border-top: .5rem solid $menu-separator-color; }
+    &:hover {
+      background-color: lighten($menu-bg-color, 2.5%);
+    }
+    &.separate {
+      border-top: .5rem solid $menu-separator-color;
+    }
+  }
+
+  #menu-return-trigger {
+    cursor: pointer;
   }
 
   .page-footer {
@@ -68,12 +108,17 @@
     padding: $space-factor $space-factor / 2;
     margin: $space-factor 0 0;
 
-    > * { display: inline-block; margin-right: $space-factor / 2; }
-    > *:last-child { margin-right: 0; }
+    > * {
+      display: inline-block;
+      margin-right: $space-factor / 2;
+    }
+    > *:last-child {
+      margin-right: 0;
+    }
   }
 }
 
-.wrapper-menu  ~ .wrapper-content {
+.wrapper-menu ~ .wrapper-content {
   transition: left .5s;
 }
 
@@ -96,16 +141,33 @@
 
 @include media-tablet {
   $width: 40%;
-  .wrapper-menu { width: $width; left: -$width; }
-  .wrapper-menu.active ~ .wrapper-content { left: $width; }
+  .wrapper-menu {
+    width: $width;
+    left: -$width;
+  }
+  .wrapper-menu.active ~ .wrapper-content {
+    left: $width;
+  }
 }
+
 @include media-desktop {
   $width: 35%;
-  .wrapper-menu { width: $width; left: -$width; }
-  .wrapper-menu.active ~ .wrapper-content { left: $width; }
+  .wrapper-menu {
+    width: $width;
+    left: -$width;
+  }
+  .wrapper-menu.active ~ .wrapper-content {
+    left: $width;
+  }
 }
+
 @include media-large {
   $width: 25%;
-  .wrapper-menu { width: $width; left: -$width; }
-  .wrapper-menu.active ~ .wrapper-content { left: $width; }
+  .wrapper-menu {
+    width: $width;
+    left: -$width;
+  }
+  .wrapper-menu.active ~ .wrapper-content {
+    left: $width;
+  }
 }

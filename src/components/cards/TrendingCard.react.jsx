@@ -15,7 +15,12 @@ class TrendingCard extends React.Component {
     return (
         <StackComponent className="container trending-card">
           <StackComponent>
-            <h5>Trending today</h5>
+            <div>
+              <svg className="icon">
+                <use xlinkHref="#shape-stats-dots"/>
+              </svg>
+              <h5>Trending today</h5>
+            </div>
             <a href="">#pray4paris</a>
             <a href="">#dolanplz</a>
             <a href="">#donaldtrumpforprez</a>

@@ -7,13 +7,49 @@ import AppStore from '../../stores/AppStore';
 import * as AppActionCreators from '../../actions/AppActionCreators';
 
 let menuItemData = [
-  { name: "Home", to: "/", separate: true, handler: null },
-  { name: "Notifications", to: "notifications", separate: false, handler: null },
-  { name: "Messages", to: "messages", separate: false, handler: null },
-  { name: "Requests", to: "requests", separate: false, handler: null },
-  { name: "Profile", to: "daffy.duck", separate: false, handler: null },
-  { name: "Settings", to: "daffy.duck/settings", separate: false, handler: null },
-  { name: "Log out", to: "logout", separate: true, handler: null }
+  { name: "Home", to: "/", separate: true, handler: null, icon: "#shape-home" },
+  {
+    name: "Notifications",
+    to: "notifications",
+    separate: false,
+    handler: null,
+    icon: "#shape-earth"
+  },
+  {
+    name: "Messages",
+    to: "messages",
+    separate: false,
+    handler: null,
+    icon: "#shape-bubbles2"
+  },
+  {
+    name: "Requests",
+    to: "requests",
+    separate: false,
+    handler: null,
+    icon: "#shape-question"
+  },
+  {
+    name: "Profile",
+    to: "daffy.duck",
+    separate: false,
+    handler: null,
+    icon: "#shape-user"
+  },
+  {
+    name: "Settings",
+    to: "daffy.duck/settings",
+    separate: false,
+    handler: null,
+    icon: "#shape-cog"
+  },
+  {
+    name: "Log out",
+    to: "logout",
+    separate: true,
+    handler: null,
+    icon: "#shape-exit"
+  }
 ];
 
 let footerItemData = [
@@ -59,11 +95,20 @@ class WrapperMenu extends React.Component {
     className += this.state.active ? " active" : "";
 
     let menuItems = menuItemData.map(item => {
+      let icon = null;
+      if (item.icon !== null || item.icon !== '') {
+        icon = (
+            <svg className="icon">
+              <use xlinkHref={item.icon}/>
+            </svg>
+        );
+      }
       return (
           <li key={item.name} className={item.separate ? "separate" : ""}>
             <Link to={item.to}
                   onClick={item.handler || this._handleHideMenu}>
-              {item.name}
+              {icon}
+              <span>{item.name}</span>
             </Link>
           </li>
       );
@@ -73,7 +118,7 @@ class WrapperMenu extends React.Component {
           <Link key={item.name}
                 to={item.to}
                 onClick={item.handler || this._handleHideMenu}>
-            {item.name}
+            <span>{item.name}</span>
           </Link>
       );
     });
@@ -81,10 +126,19 @@ class WrapperMenu extends React.Component {
     return (
         <nav className={className}>
           <ul>
-            <li id="menu-return-trigger"><a
-                onClick={this._handleHideMenu}>Back</a></li>
+            <li id="menu-return-trigger">
+              <a onClick={this._handleHideMenu}>
+                <svg className="icon">
+                  <use xlinkHref="#shape-arrow-right"/>
+                </svg>
+                <span>Back</span>
+              </a>
+            </li>
             <li className="separate">
               <form action="">
+                <svg className="icon">
+                  <use xlinkHref="#shape-search"/>
+                </svg>
                 <input placeholder="Search" type="search"/>
               </form>
             </li>
