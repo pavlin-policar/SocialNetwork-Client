@@ -1,0 +1,51 @@
+@import '../config';
+@import '../mixins';
+
+$location-map-height: 400px;
+
+.location-map {
+  height: $location-map-height;
+  position: relative;
+  border: .1rem solid $general-border-color;
+}
+
+.location-map-loading {
+  height: $location-map-height;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  background-color: #fff;
+  opacity: 0;
+  font-size: 0;
+
+  transition: .5s opacity;
+
+  z-index: 200;
+
+  svg {
+    width: $font-size * 3;
+    height: 100%;
+    fill: #666;
+
+    animation: spin 2.5s linear infinite;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@include keyframes(spin) {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+.no-svg {
+  .location-map-loading {
+    font-size: $font-size;
+  }
+}

@@ -10,42 +10,42 @@ let menuItemData = [
   { name: "Home", to: "/", separate: true, handler: null, icon: "#shape-home" },
   {
     name: "Notifications",
-    to: "notifications",
+    to: "/notifications",
     separate: false,
     handler: null,
     icon: "#shape-earth"
   },
   {
     name: "Messages",
-    to: "messages",
+    to: "/messages",
     separate: false,
     handler: null,
     icon: "#shape-bubbles2"
   },
   {
     name: "Requests",
-    to: "requests",
+    to: "/requests",
     separate: false,
     handler: null,
     icon: "#shape-question"
   },
   {
     name: "Profile",
-    to: "daffy.duck",
+    to: "/daffy.duck",
     separate: false,
     handler: null,
     icon: "#shape-user"
   },
   {
     name: "Settings",
-    to: "daffy.duck/settings",
+    to: "/settings",
     separate: false,
     handler: null,
     icon: "#shape-cog"
   },
   {
     name: "Log out",
-    to: "logout",
+    to: "/logout",
     separate: true,
     handler: null,
     icon: "#shape-exit"
@@ -53,11 +53,11 @@ let menuItemData = [
 ];
 
 let footerItemData = [
-  { name: "About", to: "about", handler: null },
-  { name: "Help", to: "help", handler: null },
-  { name: "Privacy", to: "privacy", handler: null },
-  { name: "Terms", to: "terms", handler: null },
-  { name: "Cookies", to: "cookies", handler: null }
+  { name: "About", to: "/about", handler: null },
+  { name: "Help", to: "/help", handler: null },
+  { name: "Privacy", to: "/privacy", handler: null },
+  { name: "Terms", to: "/terms", handler: null },
+  { name: "Cookies", to: "/cookies", handler: null }
 ];
 
 function getState() {
@@ -106,7 +106,8 @@ class WrapperMenu extends React.Component {
       return (
           <li key={item.name} className={item.separate ? "separate" : ""}>
             <Link to={item.to}
-                  onClick={item.handler || this._handleHideMenu}>
+                  onClick={item.handler || this._handleHideMenu}
+                  role="button">
               {icon}
               <span>{item.name}</span>
             </Link>
@@ -117,7 +118,8 @@ class WrapperMenu extends React.Component {
       return (
           <Link key={item.name}
                 to={item.to}
-                onClick={item.handler || this._handleHideMenu}>
+                onClick={item.handler || this._handleHideMenu}
+                role="button">
             <span>{item.name}</span>
           </Link>
       );
@@ -127,7 +129,7 @@ class WrapperMenu extends React.Component {
         <nav className={className}>
           <ul>
             <li id="menu-return-trigger">
-              <a onClick={this._handleHideMenu}>
+              <a onClick={this._handleHideMenu} role="button">
                 <svg className="icon">
                   <use xlinkHref="#shape-arrow-right"/>
                 </svg>
