@@ -1,6 +1,7 @@
 import './ProfileCard.scss';
 
 import React from 'react';
+import { Link } from 'react-router';
 import StackComponent from '../common/StackComponent.react';
 import InlineComponent from '../common/InlineComponent.react';
 
@@ -19,7 +20,7 @@ class ProfileCard extends React.Component {
           <InlineComponent className="profile-card-content">
             <img alt="" src="http://placehold.it/96x96"/>
             <StackComponent>
-              <h3>Daffy Duck</h3>
+              <h3><Link to="/daffy.duck">Daffy Duck</Link></h3>
               <h4>Narnia</h4>
             </StackComponent>
           </InlineComponent>

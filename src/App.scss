@@ -126,6 +126,16 @@ button, .button {
   width: 100%;
 }
 
+.block-link {
+  display: inline-block;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    background-color: darken(#fff, 1%);
+  }
+}
+
 // STRUCTURAL
 .max-width-container {
   display: flex;
@@ -147,31 +157,13 @@ button, .button {
   }
 }
 
-.col-25, .col-33, col-50, .col-66, col-75 {
-  width: 100%;
-}
-
-@include media-le-desktop {
-  .col-25 {
-    width: 25%;
-  }
-  .col-33 {
-    width: 100% / 3;
-  }
-  .col-50 {
-    width: 50%;
-  }
-  .col-66 {
-    width: 100% * 2 / 2;
-  }
-  .col-75 {
-    width: 75%;
-  }
-  .col-100 {
+$widths: 25 25%, 33 33%, 50 50%, 66 66%, 75 75%, 100 100%;
+@each $width, $percentage in $widths {
+  .col-#{$width} {
     width: 100%;
-  }
-}
 
-.margin-bottom {
-  margin-bottom: $space-factor;
+    @include media-le-desktop {
+      width: $percentage;
+    }
+  }
 }

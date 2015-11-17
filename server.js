@@ -26,8 +26,10 @@ if (!isProduction) {
     res.send('');
   });
 
-  // Any requests to localhost:3000/build is proxied
-  // to webpack-dev-server
+  // Serve all images properly
+  app.all('/assets/images/*');
+
+  // Any requests to localhost:3000/build is proxied to webpack-dev-server
   app.all('/assets/*', function (req, res) {
     proxy.web(req, res, {
       target: 'http://localhost:8080'

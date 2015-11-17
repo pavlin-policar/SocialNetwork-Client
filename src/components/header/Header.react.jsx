@@ -16,9 +16,9 @@ class Header extends React.Component {
     return (
         <header className="banner" role="banner">
           <button onClick={this._handleShowMenu}>Menu</button>
+          <Link to="/">Home</Link>
           <button>Messages</button>
           <button>Notifications</button>
-          <Link id="logo" to="/"><h1>SP Social</h1></Link>
         </header>
     );
   }

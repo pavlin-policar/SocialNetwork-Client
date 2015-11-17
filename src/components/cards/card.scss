@@ -3,9 +3,13 @@
 @mixin card-common {
   margin-bottom: $space-factor;
 
-  & > * {
-    margin-bottom: $space-factor;
+  & > *:not([class^="block"]) {
     padding: $space-factor;
+  }
+
+  & > [class^="block"] > * {
+    padding: $space-factor;
+    margin-bottom: 0;
   }
 
   & > * {

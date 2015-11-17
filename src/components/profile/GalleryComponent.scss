@@ -1,0 +1,22 @@
+@import '../config';
+
+.gallery-component {
+  padding: $space-factor;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-grid {
+
+  // give us the ability to specify how many items we want in each grid row
+  @for $i from 1 through 8 {
+    &.grid-#{$i} > * {
+      width: 100% / $i;
+    }
+  }
+
+  img {
+    padding: $space-factor / 2;
+    border: .1rem solid $general-border-color;
+  }
+}

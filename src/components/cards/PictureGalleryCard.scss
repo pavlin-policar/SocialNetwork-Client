@@ -4,8 +4,11 @@
 .picture-gallery-card {
   @include card-common;
 
+  margin-bottom: 0;
+
   h5 {
     margin-top: 0;
+    margin-bottom: $space-factor;
     border-bottom: .1rem solid $general-border-color;
   }
 }

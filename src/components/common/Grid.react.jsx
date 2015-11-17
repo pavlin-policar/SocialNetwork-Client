@@ -11,8 +11,12 @@ class Grid extends React.Component {
   }
 
   render() {
+    let className = 'grid';
+    if ('className' in this.props) {
+      className += ' ' + this.props.className;
+    }
     return (
-        <div className="grid">
+        <div {...this.props} className={className}>
           {this.props.children}
         </div>
     );
