@@ -10,7 +10,7 @@ import React from 'react';
  * state for the component to function.
  * @returns {Function}
  */
-export default function listen(stores, getStateMethod) {
+export default function Listen(stores, getStateMethod) {
 
   return function (DecoratedComponent) {
 

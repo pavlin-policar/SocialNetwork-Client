@@ -2,7 +2,7 @@ import './WrapperMenu.scss';
 
 import React from 'react';
 import { Link } from 'react-router';
-import listen from '../Listen';
+import Listen from '../Listen';
 import AppStore from '../../stores/AppStore';
 import * as AppActionCreators from '../../actions/AppActionCreators';
 
@@ -66,7 +66,7 @@ function getState() {
   }
 }
 
-@listen([AppStore], getState)
+@Listen([AppStore], getState)
 class WrapperMenu extends React.Component {
 
   displayName = "WrapperMenu";
