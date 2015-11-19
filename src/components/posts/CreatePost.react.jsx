@@ -15,12 +15,12 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-        <section className="create-post">
+        <section className="padded create-post">
           <InlineForm action="">
             <img alt="" src="http://placehold.it/56x56"/>
             <StackComponent>
               <InlineComponent className="create-post-form">
-                <textarea placeholder="Share with the world"></textarea>
+                <textarea placeholder="Share with the world"/>
               </InlineComponent>
               <InlineComponent className="create-post-options">
                 <a href="">Share a photo</a>

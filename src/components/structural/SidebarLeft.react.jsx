@@ -14,7 +14,7 @@ class SidebarLeft extends React.Component {
 
   render() {
     return (
-      <div className="wrapper-sidebar-left">
+      <div className="col-30 home-sidebar-left">
         <ProfileCard />
         <TrendingCard />
       </div>

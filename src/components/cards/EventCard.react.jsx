@@ -20,9 +20,9 @@ class EventCard extends React.Component {
               <h5>Events today</h5>
             </div>
             <StackComponent>
-              <span className="event-inline-global"><a href="">Paris terrorist
+              <span className="icon-inline-heading"><a href="">Paris terrorist
                 attacks</a></span>
-              <span className="event-inline-birthday"><a href="">Bugs Bunny</a> is celebrating their birthday today.</span>
+              <span className="icon-inline-heading"><a href="">Bugs Bunny</a> is celebrating their birthday today.</span>
             </StackComponent>
           </StackComponent>
           <StackComponent className="padded">
@@ -33,7 +33,7 @@ class EventCard extends React.Component {
               <h5>Upcoming events</h5>
             </div>
             <StackComponent>
-              <span className="event-inline-social"><a href="">Metallica
+              <span className="icon-inline-heading"><a href="">Metallica
                 concert</a> tommorow at 21:00</span>
             </StackComponent>
           </StackComponent>

@@ -13,7 +13,7 @@ class SidebarRight extends React.Component {
 
   render() {
     return (
-        <div className="wrapper-sidebar-right">
+        <div className="col-30 home-sidebar-right">
           <EventCard />
         </div>
     );

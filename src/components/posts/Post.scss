@@ -2,20 +2,12 @@
 
 article.post {
   border-top: .1rem solid $general-border-color;
-  padding: $space-factor;
 }
 
-.post-title, .post-body {
-  margin-bottom: $space-factor;
-}
+.post-title, .post-body { margin-bottom: $space-factor; }
 
-// POST HEADER
-// Image, author, extra data
 .post-title {
-
-  img {
-    margin-right: $space-factor / 4;
-  }
+  img { margin-right: $space-factor / 4; }
 }
 
 .post-body {
@@ -26,7 +18,5 @@ article.post {
   font-size: 80%;
   color: $info-color;
 
-  a {
-    color: $info-color;
-  }
+  a { color: $info-color; }
 }

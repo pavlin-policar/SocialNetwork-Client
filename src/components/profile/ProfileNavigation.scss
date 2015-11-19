@@ -20,16 +20,9 @@
     text-decoration: none;
     border-left: .1rem solid $general-border-color;
 
-    &:last-child {
-      border-right: .1rem solid $general-border-color;
-    }
-
-    &:hover {
-      background-color: darken($banner-bg-color, 1%);
-    }
+    &:last-child { border-right: .1rem solid $general-border-color; }
+    &:hover { background-color: darken($banner-bg-color, 1%); }
   }
 
-  @include media-le-tablet {
-    padding: 0 $space-factor 0 208px;
-  }
+  @include media-le-tablet { padding: 0 $space-factor 0 208px; }
 }

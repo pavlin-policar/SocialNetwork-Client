@@ -1,5 +1,3 @@
-import './FeedComponent.scss';
-
 import React from 'react';
 import CreatePost from './posts/CreatePost.react';
 import PostsContainer from './posts/PostsContainer.react';
@@ -14,7 +12,7 @@ class FeedComponent extends React.Component {
 
   render() {
     return (
-        <div className="wrapper-feed container">
+        <div className="container">
           <CreatePost />
           <PostsContainer />
         </div>

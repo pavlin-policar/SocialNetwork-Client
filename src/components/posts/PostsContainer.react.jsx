@@ -106,9 +106,9 @@ class PostsContainer extends React.Component {
     });
     return (
         <section id="news">
-          <a href="" className="new-posts">5 new posts</a>
+          <a href="" className="padded new-posts">5 new posts</a>
           {posts}
-          <a href="" className="load-more">Load more</a>
+          <a href="" className="padded load-more">Load more</a>
         </section>
     );
   }

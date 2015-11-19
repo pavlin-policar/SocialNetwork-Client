@@ -19,7 +19,7 @@ class Post extends React.Component {
   render() {
     const post = this.props.post;
     return (
-        <article className="post">
+        <article className="padded post">
           <InlineComponent className="post-title">
             <img alt="" src={post.thumbnail}/>
             <StackComponent>

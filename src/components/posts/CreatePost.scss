@@ -3,20 +3,18 @@
 @import '../mixins';
 
 .create-post {
-  padding: $space-factor;
   background-color: $create-post-color;
 
-  img {
-    margin-right: $space-factor / 4;
-  }
+  img { margin-right: $space-factor / 4; }
 
   textarea {
+    $border: .1rem solid $general-border-color;
+
     resize: none;
     align-self: stretch;
-    border: .1rem solid $general-border-color;
-    border-left: 0;
-    border-right: 0;
-
+    border-style: none;
+    border-top: $border;
+    border-bottom: $border;
     transition: all .25s;
 
     &:focus {

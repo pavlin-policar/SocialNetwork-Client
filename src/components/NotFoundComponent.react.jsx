@@ -14,7 +14,7 @@ class NotFoundComponent extends React.Component {
   render() {
     return (
         <div className="max-width-container">
-          <div className="col-75 container not-found">
+          <div className="col-75 centered container not-found">
             <h3>404 Not found</h3>
 
             <p><b>The page you have tried to access doesn't exist.</b></p>

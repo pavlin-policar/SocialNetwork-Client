@@ -1,35 +1,15 @@
 @import '../mixins';
 
-.wall-wrapper-content {
-  flex-grow: 8;
+.wall-component {
   display: flex;
-  order: 2;
-  flex-direction: column;
-}
-
-main {
-  display: flex;
+  // stack all components by default
   flex-direction: column;
 
-  @include media-le-desktop {
-    flex-direction: row;
-  }
+  // if screen is big enough, place children in row instead of columns
+  @include media-le-desktop { flex-direction: row; }
 }
 
-@include media-le-tablet {
-  main {
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@include media-le-desktop {
-  main {
-    width: 100%;
-  }
-}
-@include media-large {
-  main {
-    width: 1500px;
-  }
+.home-middle-column {
+  display: flex;
+  flex-direction: column;
 }

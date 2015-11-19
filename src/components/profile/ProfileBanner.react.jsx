@@ -12,7 +12,7 @@ class ProfileBanner extends React.Component {
 
   render() {
     return (
-        <div className="profile-banner">
+        <div className="profile-banner padded">
           <div className="max-width-container">
             <img alt="" src="http://placehold.it/196x196"/>
           </div>

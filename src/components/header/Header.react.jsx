@@ -2,6 +2,7 @@ import './Header.scss';
 
 import React from 'react';
 import { Link } from 'react-router';
+import Listen from '../Listen';
 import AppStore from '../../stores/AppStore';
 import * as AppActionCreators from '../../actions/AppActionCreators';
 
@@ -12,37 +13,22 @@ function getState() {
   }
 }
 
+@Listen([AppStore], getState)
 class Header extends React.Component {
 
   displayName = "Header";
 
-  state = getState();
-
   constructor(props) {
     super(props);
-
-    this._onChange = this._onChange.bind(this);
-  }
-
-  componentDidMount() {
-    AppStore.addChangeListener(this._onChange);
-  }
-
-  componentWillUnmount() {
-    AppStore.removeChangeListener(this._onChange);
-  }
-
-  _onChange() {
-    this.setState(getState());
   }
 
   render() {
     let menuClass = 'icon';
-    if (this.state.menuOpen) {
+    if (this.props.menuOpen) {
       menuClass += ' shape-rotate-45';
     }
     return (
-        <header className="banner" role="banner">
+        <header className="bordered banner" role="banner">
           <button onClick={this._handleShowMenu} className="icon-container">
             <svg className={menuClass}>
               <use xlinkHref="#shape-plus"/>

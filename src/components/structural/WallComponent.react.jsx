@@ -38,14 +38,14 @@ class WallComponent extends React.Component {
       postMessage = <PostMessage message={this.state.postMessage.message}/>;
     }
     return (
-      <main>
+      <div className="max-width-container wall-component">
         <SidebarLeft />
-        <SidebarRight />
-        <StackComponent className="wall-wrapper-content">
+        <StackComponent className="col-40 home-middle-column">
           {postMessage}
           <FeedComponent />
         </StackComponent>
-      </main>
+        <SidebarRight />
+      </div>
     );
   }
 

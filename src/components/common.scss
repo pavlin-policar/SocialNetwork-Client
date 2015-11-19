@@ -1,42 +1,27 @@
 @import 'config';
 @import 'mixins';
 
-.margin-bottom {
-  margin-bottom: $space-factor;
-}
-
-.padded {
-  padding: $space-factor;
-}
+.margin-bottom { margin-bottom: $space-factor; }
+.padded { padding: $space-factor; }
+.bordered { border-bottom: .1rem solid $general-border-color; }
 
 .max-width-container {
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
 
-  > *[class^="col-"] {
-    align-self: flex-start;
-  }
+  > *[class^="col-"] { align-self: flex-start; }
 
-  @include media-le-tablet {
-    width: 700px;
-  }
-  @include media-le-desktop {
-    width: 100%;
-  }
-  @include media-large {
-    width: 1500px;
-  }
+  @include media-le-tablet { width: 700px; }
+  @include media-le-desktop { width: 100%; }
+  @include media-large { width: 1500px; }
 }
 
-$widths: 25 25%, 33 33%, 50 50%, 66 66%, 75 75%, 100 100%;
+$widths: 25 25%, 30 30%, 33 33%, 40 40% 50 50%, 66 66%, 75 75%, 100 100%;
 @each $width, $percentage in $widths {
   .col-#{$width} {
     width: 100%;
-
-    @include media-le-desktop {
-      width: $percentage;
-    }
+    @include media-le-desktop { width: $percentage; }
   }
 }
 
@@ -48,8 +33,7 @@ $widths: 25 25%, 33 33%, 50 50%, 66 66%, 75 75%, 100 100%;
 .container {
   $border: .1rem solid $general-border-color;
   background-color: #fff;
-  border-top: $border;
-  border-bottom: $border;
+  margin-bottom: $space-factor;
 
   @include media-le-tablet {
     border: $border;
@@ -61,17 +45,11 @@ $widths: 25 25%, 33 33%, 50 50%, 66 66%, 75 75%, 100 100%;
 .card {
   margin-bottom: $space-factor;
 
-  & > * {
-    margin-bottom: 0;
-  }
+  & > * { margin-bottom: 0; }
 
   h5 {
     display: inline-block;
     margin: 0;
-  }
-
-  .bordered {
-    border-bottom: .1rem solid $general-border-color;
   }
 
   .icon {

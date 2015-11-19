@@ -1,30 +1,13 @@
 @import '../config';
 @import '../mixins';
 
-.wrapper-sidebar-left {
+.home-sidebar-left {
   align-self: flex-start;
-
-  h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: $space-factor / 2;
-  }
-}
-
-.wrapper-sidebar-left {
-  flex-grow: 1;
   display: none;
-  order: 3;
 }
 
 @include media-le-desktop {
-  .wrapper-sidebar-left {
-    flex-basis: 40%;
+  .home-sidebar-left {
     display: block;
-    order: 1;
-  }
-}
-@include media-large {
-  .wrapper-sidebar-left {
-    flex-basis: 30%;
   }
 }

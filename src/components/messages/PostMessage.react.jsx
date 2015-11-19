@@ -12,7 +12,7 @@ class PostMessage extends React.Component {
 
   render() {
     return (
-        <div className="container post-message">
+        <div className="padded container post-message">
           {this.props.message}
         </div>
     );

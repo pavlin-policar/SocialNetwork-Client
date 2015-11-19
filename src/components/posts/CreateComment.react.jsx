@@ -13,13 +13,13 @@ class CreateComment extends React.Component {
 
   render() {
     return (
-      <section className="post-social">
-        <InlineForm action="">
-          <img alt="" src="http://placehold.it/40x40"/>
-          <textarea placeholder="Leave a comment" rows="1"></textarea>
-          <button type="submit">Post</button>
-        </InlineForm>
-      </section>
+        <section className="post-social">
+          <InlineForm action="">
+            <img alt="" src="http://placehold.it/40x40"/>
+            <textarea placeholder="Leave a comment" rows="1"/>
+            <button type="submit">Post</button>
+          </InlineForm>
+        </section>
     );
   }
 
