@@ -45,17 +45,24 @@ class LocationMap extends React.Component {
     }
 
     let loadingClass = 'location-map-loading';
+    let locationClass = 'location-map';
     if (this.state.status === LOCATION_STATUS.LOADING) {
       loadingClass += ' active';
+    } else if (this.state.status === LOCATION_STATUS.ERROR) {
+      locationClass += ' error';
     }
     return (
-        <div className="location-map">
+        <div className={locationClass}>
           <div className={loadingClass}>
             <svg className="icon">
               <use xlinkHref="#shape-spinner8"/>
             </svg>
             Loading
           </div>
+          <span className="location-map-error">
+            {this.state.status === LOCATION_STATUS.ERROR ? this.state.error :
+                ''}
+          </span>
           {map}
         </div>
     );
@@ -88,7 +95,9 @@ class LocationMap extends React.Component {
     let errorMessage;
     switch (err.code) {
       case err.PERMISSION_DENIED:
-        errorMessage = "User denied the request for Geolocation.";
+        errorMessage = "You need to allow this web domain access to your" +
+            "location in order to use the features supported by location" +
+            "services.";
         break;
       case err.POSITION_UNAVAILABLE:
         errorMessage = "Location information is unavailable.";

@@ -7,6 +7,11 @@ $location-map-height: 400px;
   height: $location-map-height;
   position: relative;
   border: .1rem solid $general-border-color;
+
+  &.error {
+    height: auto;
+    border: none;
+  }
 }
 
 .location-map-loading {
@@ -19,6 +24,7 @@ $location-map-height: 400px;
   font-size: 0;
 
   transition: .5s opacity;
+  visibility: hidden;
 
   z-index: 200;
 
@@ -32,6 +38,7 @@ $location-map-height: 400px;
 
   &.active {
     opacity: 1;
+    visibility: visible;
   }
 }
 

@@ -66,33 +66,18 @@ function getState() {
   }
 }
 
+@listen([AppStore], getState)
 class WrapperMenu extends React.Component {
 
   displayName = "WrapperMenu";
 
-  state = getState();
-
   constructor(props) {
     super(props);
-
-    this._onChange = this._onChange.bind(this);
-  }
-
-  componentDidMount() {
-    AppStore.addChangeListener(this._onChange);
-  }
-
-  componentWillUnmount() {
-    AppStore.removeChangeListener(this._onChange);
-  }
-
-  _onChange() {
-    this.setState(getState());
   }
 
   render() {
     let className = "wrapper-menu";
-    className += this.state.active ? " active" : "";
+    className += this.props.active ? " active" : "";
 
     let menuItems = menuItemData.map(item => {
       let icon = null;
