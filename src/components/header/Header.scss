@@ -8,17 +8,23 @@ header.banner {
   .icon {
     height: $font-size * 1.5;
     width: $font-size * 1.5;
-
     fill: #333;
   }
 
-  > * {
-    font-weight: bold;
-    margin-bottom: 0;
-    color: #000;
-    background-color: transparent;
-    align-self: stretch;
-    padding: $space-factor * 1.5 $space-factor * 2;
+  > [class~="nav-item"] {
+    &.active {
+      border-left: .1rem solid $general-border-color;
+      border-right: .1rem solid $general-border-color;
+    }
+
+    > * {
+      font-weight: bold;
+      margin-bottom: 0;
+      color: #000;
+      background-color: transparent;
+      align-self: stretch;
+      padding: $space-factor * 1.5 $space-factor * 2;
+    }
 
     &:hover {
       background-color: darken($banner-bg-color, 1%);
@@ -29,7 +35,7 @@ header.banner {
 
   a {
     color: #000;
-
     &:hover { text-decoration: none; }
   }
 }
+

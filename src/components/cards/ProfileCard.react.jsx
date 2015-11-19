@@ -15,7 +15,7 @@ class ProfileCard extends React.Component {
 
   render() {
     return (
-        <StackComponent className="container profile-card" id="quick-profile">
+        <StackComponent className="container card profile-card" id="quick-profile">
           <div className="col-100 profile-card-banner"></div>
           <InlineComponent className="profile-card-content padded">
             <img alt="" src="http://placehold.it/96x96"/>

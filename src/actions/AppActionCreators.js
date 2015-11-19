@@ -14,3 +14,11 @@ export function hideMenu() {
 export function showModal() {
   AppDispatcher.dispatchViewAction(ActionTypes.SHOW_MODAL);
 }
+
+export function toggleHeaderNotificationMenu() {
+  AppDispatcher.dispatchViewAction(ActionTypes.TOGGLE_HEADER_NOTIFICATION_MENU);
+}
+
+export function toggleHeaderMessageMenu() {
+  AppDispatcher.dispatchViewAction(ActionTypes.TOGGLE_HEADER_MESSAGE_MENU);
+}

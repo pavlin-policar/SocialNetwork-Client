@@ -1,0 +1,28 @@
+@import '../config';
+
+.header-menu {
+  font-size: $font-size;
+  position: absolute;
+  background-color: #fff;
+
+  left: 0;
+  top: 4.5 * $font-size + .1rem;
+  width: 100%;
+
+  overflow: hidden;
+
+  // to transition the height to auto, we need to use the max-height property
+  max-height: 0;
+  padding: 0 $space-factor;
+  // to make the transition smooth, we change the transition styles and duration
+  transition: all .25s ease-out;
+  border-bottom: none;
+
+  &.active {
+    padding: $space-factor;
+    max-height: 50vh;
+    transition: all 0.35s ease-in;
+
+    border-bottom: .1rem solid $general-border-color;
+  }
+}
