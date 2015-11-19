@@ -1,0 +1,85 @@
+@import 'config';
+@import 'mixins';
+
+.margin-bottom {
+  margin-bottom: $space-factor;
+}
+
+.padded {
+  padding: $space-factor;
+}
+
+.max-width-container {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  > *[class^="col-"] {
+    align-self: flex-start;
+  }
+
+  @include media-le-tablet {
+    width: 700px;
+  }
+  @include media-le-desktop {
+    width: 100%;
+  }
+  @include media-large {
+    width: 1500px;
+  }
+}
+
+$widths: 25 25%, 33 33%, 50 50%, 66 66%, 75 75%, 100 100%;
+@each $width, $percentage in $widths {
+  .col-#{$width} {
+    width: 100%;
+
+    @include media-le-desktop {
+      width: $percentage;
+    }
+  }
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  $border: .1rem solid $general-border-color;
+  background-color: #fff;
+  border-top: $border;
+  border-bottom: $border;
+
+  @include media-le-tablet {
+    border: $border;
+    margin-left: $space-factor;
+    margin-right: $space-factor;
+  }
+}
+
+.card {
+  margin-bottom: $space-factor;
+
+  & > * {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .bordered {
+    border-bottom: .1rem solid $general-border-color;
+  }
+
+  .icon {
+    width: $font-size * 1.5;
+    height: $font-size * 1.5;
+    fill: #333;
+    margin-right: $font-size / 2;
+    margin-bottom: -$space-factor / 4;
+    vertical-align: baseline;
+  }
+}

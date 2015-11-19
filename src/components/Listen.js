@@ -4,6 +4,7 @@ import React from 'react';
  * Automatically connect a component to the stores it requires to function
  * properly. This takes out the boilerplate since binding is automatically
  * resolved.
+ * All state will be passed down into the props attribute in target class.
  *
  * @param {Array} stores Stores to listen to
  * @param {Function} getStateMethod The function that returns the required
@@ -19,9 +20,9 @@ export default function Listen(stores, getStateMethod) {
       DecoratedComponent.name ||
       'Component';
 
-    return class StoreListener extends React.Component {
+    return class extends React.Component {
 
-      displayName = `listen(${displayName})`;
+      displayName = `Listen(${displayName})`;
 
       state = getStateMethod();
 
@@ -31,7 +32,7 @@ export default function Listen(stores, getStateMethod) {
       }
 
       render() {
-        return <DecoratedComponent {...this.props} {...this.state}/>
+        return <DecoratedComponent {...this.props} {...this.state}/>;
       }
 
       componentWillMount() {

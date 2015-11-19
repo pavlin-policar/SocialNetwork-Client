@@ -1,5 +1,3 @@
-import './TrendingCard.scss';
-
 import React from 'react';
 import StackComponent from '../common/StackComponent.react';
 
@@ -13,7 +11,7 @@ class TrendingCard extends React.Component {
 
   render() {
     return (
-        <StackComponent className="container trending-card">
+        <StackComponent className="padded card container">
           <StackComponent>
             <div>
               <svg className="icon">

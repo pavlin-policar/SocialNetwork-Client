@@ -17,8 +17,8 @@ class DetailsComponent extends React.Component {
   render() {
     return (
         <div className="max-width-container">
-          <CenteredComponent className="col-75 container details-component">
-            <PaddedComponent>
+          <div className="centered col-75">
+            <div className="padded container">
               <h1>Details</h1>
 
               <StackComponent>
@@ -29,13 +29,15 @@ class DetailsComponent extends React.Component {
 
               <StackComponent>
                 <h5>Location</h5>
-                <p>This website can use your location information for an improved user experience.</p>
-                <p>This can also be used to detect any unwanted access to your account, such as pesky friends or other intrusions.</p>
+                <p>This website can use your location information for an
+                  improved
+                  user experience.</p>
+                <p>This can also be used to detect any unwanted access to your
+                  account, such as pesky friends or other intrusions.</p>
                 <LocationMap />
               </StackComponent>
-
-            </PaddedComponent>
-          </CenteredComponent>
+            </div>
+          </div>
         </div>
     );
   }

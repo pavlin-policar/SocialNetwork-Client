@@ -1,5 +1,6 @@
 @import '../bower_components/normalize-css/normalize.css';
 @import 'components/config';
+@import 'components/common';
 @import 'components/typography';
 @import 'components/mixins';
 @import 'components/shapes';
@@ -45,19 +46,6 @@ form {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
-}
-
-.container {
-  $border: .1rem solid $general-border-color;
-  background-color: #fff;
-  border-top: $border;
-  border-bottom: $border;
-
-  @include media-le-tablet {
-    border: $border;
-    margin-left: $space-factor;
-    margin-right: $space-factor;
-  }
 }
 
 .more {
@@ -134,37 +122,5 @@ button, .button {
   &:hover {
     text-decoration: none;
     background-color: darken(#fff, 1%);
-  }
-}
-
-// STRUCTURAL
-.max-width-container {
-  display: flex;
-  margin: 0 auto;
-  flex-wrap: wrap;
-
-  > *[class^="col-"] {
-    align-self: flex-start;
-  }
-
-  @include media-le-tablet {
-    width: 700px;
-  }
-  @include media-le-desktop {
-    width: 100%;
-  }
-  @include media-large {
-    width: 1500px;
-  }
-}
-
-$widths: 25 25%, 33 33%, 50 50%, 66 66%, 75 75%, 100 100%;
-@each $width, $percentage in $widths {
-  .col-#{$width} {
-    width: 100%;
-
-    @include media-le-desktop {
-      width: $percentage;
-    }
   }
 }

@@ -1,5 +1,3 @@
-import './EventCard.scss';
-
 import React from 'react';
 import StackComponent from '../common/StackComponent.react';
 
@@ -13,8 +11,8 @@ class EventCard extends React.Component {
 
   render() {
     return (
-        <StackComponent className="container event-card">
-          <StackComponent className="event-card-today">
+        <StackComponent className="card container">
+          <StackComponent className="padded bordered">
             <div>
               <svg className="icon">
                 <use xlinkHref="#shape-sun"/>
@@ -27,7 +25,7 @@ class EventCard extends React.Component {
               <span className="event-inline-birthday"><a href="">Bugs Bunny</a> is celebrating their birthday today.</span>
             </StackComponent>
           </StackComponent>
-          <StackComponent className="event-card-upcoming">
+          <StackComponent className="padded">
             <div>
               <svg className="icon">
                 <use xlinkHref="#shape-calendar"/>
