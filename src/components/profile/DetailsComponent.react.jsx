@@ -20,7 +20,8 @@ class DetailsComponent extends React.Component {
                 <Tab>
                   <Name>Personal information</Name>
                   <Content>
-                    <h6>This is personal</h6>
+                    <h1>This is personal information</h1>
+                    <p>somthing</p>
                   </Content>
                 </Tab>
 

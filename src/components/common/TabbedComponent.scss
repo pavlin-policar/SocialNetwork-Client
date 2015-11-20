@@ -1,3 +1,37 @@
+@import '../config';
+
 .tabbed-component {
+}
+
+.tabbed-nav {
+  border-right: .1rem solid $general-border-color;
+  // stretch so that the border reaches all the way to the bottom
+  align-self: stretch;
+}
+
+.tabbed-nav-tab {
+  $tabbed-nav-bg-color: #fff;
+
+  display: block;
+  padding: $space-factor * 1.5 $space-factor;
+  margin: 0;
+  border-bottom: .1rem solid $general-border-color;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: darken($tabbed-nav-bg-color, 1%);
+  }
+
+  &.active {
+    font-weight: bold;
+    border-left: .25rem solid $profile-bg-color;
+  }
+}
+
+.tabbed-viewbox {
 
 }

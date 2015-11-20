@@ -80,10 +80,10 @@ class TabbedComponent extends React.Component {
 
     return (
         <InlineComponent className="tabbed-component">
-          <nav className="col-25 tabbed-component-nav">
+          <nav className="col-25 tabbed-nav">
             {tabNamesElements}
           </nav>
-          <div className="col-75 tabbed-component-viewbox">
+          <div className="col-75 tabbed-viewbox">
             <Content>
               {tabContent}
             </Content>
@@ -132,11 +132,11 @@ class Name extends React.Component {
 
   render() {
     return (
-        <h5
+        <span
             className={'tabbed-nav-tab' + (this.props.active ? ' active' : '')}
             onClick={this._handleClick}>
           {this.props.children}
-        </h5>
+        </span>
     );
   }
 
