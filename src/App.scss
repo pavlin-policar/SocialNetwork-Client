@@ -14,7 +14,6 @@ html {
   margin: 0;
   min-height: 100%;
   height: 100%;
-
   font-size: $font-size;
   line-height: $space-multiplier;
 }
@@ -26,7 +25,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
-
   $col1: #fbfbfb;
   $col2: #f6f6f6;
   background: repeating-linear-gradient(-45deg, $col1, $col1 25px, $col2 25px, $col2 50px) fixed;
@@ -70,7 +68,6 @@ button, .button {
   border: none;
   cursor: pointer;
   outline: none;
-
   color: $button-color-label;
   background-color: $button-color;
 
@@ -123,4 +120,40 @@ button, .button {
     text-decoration: none;
     background-color: darken(#fff, 1%);
   }
+}
+
+// Tabbed component styling
+.tabbed-component {
+  h1, h2, h3 {
+    font-size: $font-size * 1.5;
+  }
+
+  h1 {
+    border-bottom: .1rem solid $general-border-color;
+    padding-bottom: $space-factor;
+  }
+
+  p {
+    text-indent: 1.5rem;
+  }
+}
+
+dt {
+  display: inline-block;
+  font-weight: bold;
+  color: #333;
+  text-align: right;
+  padding: $space-factor * 1.5 $space-factor;
+  border-bottom: .1rem solid $general-border-color;
+
+  &:last-of-type { border-bottom: 0; }
+}
+
+dd {
+  display: inline-block;
+  margin: 0;
+  padding: $space-factor * 1.5 $space-factor;
+  border-bottom: .1rem solid $general-border-color;
+
+  &:last-of-type { border-bottom: 0; }
 }

@@ -18,10 +18,6 @@
   border-bottom: .1rem solid $general-border-color;
   cursor: pointer;
 
-  &:last-child {
-    border-bottom: none;
-  }
-
   &:hover {
     background-color: darken($tabbed-nav-bg-color, 1%);
   }

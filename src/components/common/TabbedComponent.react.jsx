@@ -159,7 +159,7 @@ class Content extends React.Component {
 
   render() {
     return (
-        <div className="padded tabbed-content">
+        <div className="tabbed-content">
           {this.props.children}
         </div>
     );
