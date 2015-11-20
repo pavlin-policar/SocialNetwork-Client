@@ -11,7 +11,7 @@ header.banner {
     fill: #333;
   }
 
-  > [class~="nav-item"] {
+  [class~="nav-item"] {
     &.active {
       border-left: .1rem solid $general-border-color;
       border-right: .1rem solid $general-border-color;
@@ -39,3 +39,7 @@ header.banner {
   }
 }
 
+
+.nav-menu-container {
+  position: relative;
+}

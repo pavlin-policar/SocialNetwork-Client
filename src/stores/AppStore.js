@@ -65,6 +65,7 @@ const instance = new AppStore();
 instance.dispatchToken = AppDispatcher.register(action => {
   switch (action.type) {
     case ActionTypes.SHOW_MENU:
+      resetAllOverlays();
       _appState = _appState.set('mainMenuVisible', true);
       _appState = _appState.set('overlayVisible', true);
       instance.emitChange();

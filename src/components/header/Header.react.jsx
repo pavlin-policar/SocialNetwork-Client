@@ -11,9 +11,7 @@ import StackComponent from '../common/StackComponent.react';
 
 function getState() {
   return {
-    menuOpen: AppStore.getMainMenuVisible(),
-    messageMenuOpen: AppStore.getMessageMenuVisible(),
-    notificationMenuOpen: AppStore.getNotificationMenuVisible()
+    menuOpen: AppStore.getMainMenuVisible()
   }
 }
 
@@ -52,43 +50,23 @@ class Header extends React.Component {
             </Link>
           </div>
 
-          <div className={'nav-item' + (this.props.messageMenuOpen ? ' active' : '')}>
-            <button className="icon-container"
-                    onClick={this._handleToggleMessageMenu}>
+          <div className="nav-item">
+            <button className="icon-container">
               <svg className="icon">
                 <use xlinkHref="#shape-bubbles2"/>
               </svg>
               Messages
             </button>
           </div>
-          <HeaderMenu
-              className={this.props.messageMenuOpen ? 'active' : ''}>
-            <StackComponent>
-              <h5>Messages</h5>
-              <ul>
-                <li>These are your messages</li>
-              </ul>
-            </StackComponent>
-          </HeaderMenu>
 
-          <div className={'nav-item' + (this.props.notificationMenuOpen ? ' active' : '')}>
-            <button className="icon-container"
-                    onClick={this._handleToggleNotificationMenu}>
+          <div className="nav-item">
+            <button className="icon-container">
               <svg className="icon">
                 <use xlinkHref="#shape-earth"/>
               </svg>
               Notifications
             </button>
           </div>
-          <HeaderMenu
-              className={this.props.notificationMenuOpen ? 'active' : ''}>
-            <StackComponent>
-              <h5>Notifications</h5>
-              <ul>
-                <li>This is a notification</li>
-              </ul>
-            </StackComponent>
-          </HeaderMenu>
 
         </header>
     );
@@ -97,16 +75,6 @@ class Header extends React.Component {
   _handleShowMenu(e) {
     e.preventDefault();
     AppActionCreators.showMenu();
-  }
-
-  _handleToggleNotificationMenu(e) {
-    e.preventDefault();
-    AppActionCreators.toggleHeaderNotificationMenu();
-  }
-
-  _handleToggleMessageMenu(e) {
-    e.preventDefault();
-    AppActionCreators.toggleHeaderMessageMenu();
   }
 
 }

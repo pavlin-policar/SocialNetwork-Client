@@ -1,4 +1,5 @@
 @import '../config';
+@import '../mixins';
 
 .header-menu {
   font-size: $font-size;
@@ -16,13 +17,25 @@
   padding: 0 $space-factor;
   // to make the transition smooth, we change the transition styles and duration
   transition: all .25s ease-out;
-  border-bottom: none;
+  border-bottom: 0 solid $general-border-color;
+
+  @include media-le-tablet {
+    width: 50vw;
+    left: 3 * 88px;
+  }
 
   &.active {
     padding: $space-factor;
     max-height: 50vh;
     transition: all 0.35s ease-in;
 
-    border-bottom: .1rem solid $general-border-color;
+    border-bottom: .1 solid $general-border-color;
+    box-shadow: 0 2rem 3rem $general-border-color;
+
+    @include media-le-tablet {
+      border: .1rem solid $general-border-color;
+      border-top: 0;
+      box-shadow: none;
+    }
   }
 }
