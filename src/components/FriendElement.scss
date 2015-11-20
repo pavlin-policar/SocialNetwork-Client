@@ -1,0 +1,19 @@
+@import './config';
+
+.friend-element {
+  flex-grow: 0;
+
+  img {
+    margin-right: $space-factor / 2;
+  }
+
+  h4 {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.friend-element-mutual {
+  font-size: 80%;
+  color: #666;
+}

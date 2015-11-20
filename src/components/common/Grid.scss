@@ -6,6 +6,13 @@
   // remove any potential whitespace between elements to create uniform spacing
   font-size: 0;
 
+  // give us the ability to specify how many items we want in each grid row
+  @for $i from 1 through 8 {
+    &.grid-#{$i} > * {
+      width: 100% / $i;
+    }
+  }
+
   a {
     display: inline-block;
     margin: 0;
