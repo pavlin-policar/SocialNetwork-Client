@@ -16,11 +16,8 @@
     border-top: $border;
     border-bottom: $border;
     transition: all .25s;
-
-    &:focus {
-      height: auto;
-      padding-bottom: 3rem;
-    }
+    padding-bottom: 3rem;
+    overflow: hidden;
   }
 
   button {

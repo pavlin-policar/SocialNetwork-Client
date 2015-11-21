@@ -21,7 +21,7 @@ class AutoTextarea extends React.Component {
   render() {
     return (
         <TextareaAutosize
-            minRows={1}
+            minRows={this.props.minRows || 1}
             onKeyDown={this._handleKeyDown}
             placeholder={this.props.placeholder}>
           {this.props.children}
