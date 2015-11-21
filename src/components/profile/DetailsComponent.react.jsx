@@ -51,7 +51,8 @@ class DetailsComponent extends React.Component {
                         <dd className="col-66">daffy.duck@narnia-mail.foo</dd>
 
                         <dt className="col-33">Home address</dt>
-                        <dd className="col-66"><i>This person has chosen not to share this information</i></dd>
+                        <dd className="col-66"><i>This person has chosen not to
+                          share this information</i></dd>
 
                         <dt className="col-33">GSM</dt>
                         <dd className="col-66">+932-39-666-666-666</dd>
@@ -109,6 +110,12 @@ class DetailsComponent extends React.Component {
                         quisquam quod reprehenderit ullam, vel vero
                         voluptatum?</p>
                     </div>
+                  </Content>
+                </Tab>
+                <Tab>
+                  <Name>Location</Name>
+                  <Content>
+                    <LocationMap />
                   </Content>
                 </Tab>
 
