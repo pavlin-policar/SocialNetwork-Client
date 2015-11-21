@@ -5,7 +5,7 @@ import InlineComponent from './common/InlineComponent.react';
 
 class FriendElement extends React.Component {
 
-  displayName = "FriendElement";
+  displayName = 'FriendElement';
 
   constructor(props) {
     super(props);

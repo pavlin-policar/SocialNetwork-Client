@@ -4,7 +4,7 @@ import React from 'react';
 
 class PostMessage extends React.Component {
 
-  displayName = "PostMessage";
+  displayName = 'PostMessage';
 
   constructor(props) {
     super(props);

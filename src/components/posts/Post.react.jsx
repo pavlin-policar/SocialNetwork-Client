@@ -10,7 +10,7 @@ import StackComponent from '../common/StackComponent.react';
 
 class Post extends React.Component {
 
-  displayName = "Post";
+  displayName = 'Post';
 
   constructor(props) {
     super(props);
@@ -36,7 +36,7 @@ class Post extends React.Component {
 
           <CommentsContainer comments={post.comments}/>
 
-          <CreateComment />
+          <CreateComment postId={post.postId} />
         </article>
     );
   }

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 class NotFoundComponent extends React.Component {
 
-  displayName = "NotFoundComponent";
+  displayName = 'NotFoundComponent';
 
   constructor(props) {
     super(props);

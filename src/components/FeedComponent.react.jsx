@@ -4,7 +4,7 @@ import PostsContainer from './posts/PostsContainer.react';
 
 class FeedComponent extends React.Component {
 
-  displayName = "WrapperFeed";
+  displayName = 'WrapperFeed';
 
   constructor(props) {
     super(props);

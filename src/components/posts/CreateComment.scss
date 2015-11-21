@@ -13,9 +13,14 @@
   }
 
   textarea {
+    // Ugh... Set padding so comment textarea is as large as image to the left in initial state
+    $padding: .45rem;
+
     resize: none;
     flex-grow: 1;
     align-self: stretch;
+    padding-top: $padding;
+    padding-bottom: $padding;
   }
 
   button {

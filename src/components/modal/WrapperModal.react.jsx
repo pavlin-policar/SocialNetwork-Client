@@ -4,7 +4,7 @@ import React from 'react';
 
 class WrapperModal extends React.Component {
 
-  displayName = "WrapperModal";
+  displayName = 'WrapperModal';
 
   state = {
     active: false
