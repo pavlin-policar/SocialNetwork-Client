@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new ExtractTextPlugin('bundle.css', { allChunks: false })
+    new ExtractTextPlugin('bundle.css')
   ],
   module: {
     loaders: [
