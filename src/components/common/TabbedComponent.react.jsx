@@ -23,7 +23,7 @@ import InlineComponent from './InlineComponent.react';
  */
 class TabbedComponent extends React.Component {
 
-  displayName = "TabbedComponent";
+  displayName = 'TabbedComponent';
 
   state = {
     activeChild: null
@@ -105,7 +105,7 @@ class TabbedComponent extends React.Component {
  */
 class Tab extends React.Component {
 
-  displayName = "TabbedComponentTab";
+  displayName = 'TabbedComponentTab';
 
   constructor(props) {
     super(props);
@@ -122,7 +122,7 @@ class Tab extends React.Component {
  */
 class Name extends React.Component {
 
-  displayName = "TabbedComponentName";
+  displayName = 'TabbedComponentName';
 
   constructor(props) {
     super(props);
@@ -142,6 +142,7 @@ class Name extends React.Component {
 
   _handleClick(e) {
     e.preventDefault();
+    // Tell the top level tabbed component that it should switch tabs
     this.props.onTabClick(this.props.name);
   }
 }
@@ -151,7 +152,7 @@ class Name extends React.Component {
  */
 class Content extends React.Component {
 
-  displayName = "TabbedComponentContent";
+  displayName = 'TabbedComponentContent';
 
   constructor(props) {
     super(props);
